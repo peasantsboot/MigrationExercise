@@ -36,6 +36,7 @@ The requirements for this exercise are listed below. Please note that when using
 
 In the following, the complete list of exercise steps are listed. Run through them in the given order. You can use this section as an index or table of contents. Use the breadcrumb navigation on top of the pages to go back to the Table of Contents.
 
+- [Getting Started - Access SAP Integration Suite](exercises/ex0/)
 - [Exercise 1 - Migration Assessment](exercises/ex1/)
 - [Exercise 2 - Migrate and test a simple Point-to-Point scenario](exercises/ex2/)
 - [Exercise 3 - Migrate and test a Point-to-Point scenario with JSON conversion](exercises/ex3/)
