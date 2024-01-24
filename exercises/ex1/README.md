@@ -132,7 +132,7 @@ Access and download analysis of your scenario evaluation runs with details speci
 
 <br>![](/exercises/ex1/images/pdf.png)
 
-## Summary- Congratulations on having Assessed your SAP Process Orchestration landscape
+## Summary
 
 Once you have evaluated the migration possibility using the Migration Assessment capability of SAP Integration Suite, you are all set to migrate an integration artifact with the Migration tool.
 
