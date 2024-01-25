@@ -155,6 +155,14 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 <br>![image](/exercises/ex2/images/Insomnia-9.png)  
 
+10. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to SOAP integration flow.
+
+<br>![image](/exercises/ex3/images/Monitoring_Navigate_To_MPL.png)
+
+11. In the message monitor, you should see one new log in status **Completed**.
+
+<br>![image](/exercises/ex3/images/Monitoring_MPL_Completed.png)
+
 ## Summary
 
 Congratulations. You have successfully migrated and tested your scenario now.
