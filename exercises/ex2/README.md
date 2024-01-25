@@ -157,7 +157,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 ## Summary
 
-Congratulations. You have successfully tested your scenario now.
+Congratulations. You have successfully migrated and tested your scenario now.
 
 Continue to - [Exercise 3 - Migrate and test a SOAP to REST scenario](../ex3/README.md)
 
