@@ -14,7 +14,7 @@ In this exercise, we will create and migrate a SOAP to REST scenario.	For this p
 
 <br>![](/exercises/ex3/images/3.0_Migrate_SelectPO_System.png)
 
-4.	Click on <b>Show Filters</b> and fill in **bootcamp.com** for the **Namespace**. Choose the interface **SI_Employee_Out** with sender **PIMAS_Sender** from the drop-down list. Click <b>Next Step</b>.
+4.	Click on <b>Show Filters</b> and fill in **bootcamp** for the **Namespace**. Choose the interface **SI_Employee_Out** with sender **PIMAS_Sender** from the drop-down list. Click <b>Next Step</b>.
 
 <br>![](/exercises/ex3/images/3.1_Migrate_SelectPO_Artifacts.png)
 
@@ -62,10 +62,10 @@ Click on <b>Configure</b>.
 
 <br>![image](/exercises/ex3/images/ex3-13.png)
 
-15. In the integration flow properties, switch to tab **Runitme Configuration**, and add the following **Namespace Mapping**:
+15. In the integration flow properties, switch to tab **Runtime Configuration**, and add the following **Namespace Mapping**:
 
 ```yaml
-xmlns:ns0=ht<span>tp://pi-elevation.bootcamp.com
+xmlns:ns0=http://pi-elevation.bootcamp.com
 ```
 
 <br>![](/exercises/ex3/images/5.0_View_iFlow_Changes_to_Make.png)
