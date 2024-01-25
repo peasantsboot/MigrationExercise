@@ -151,7 +151,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 <br>![image](/exercises/ex2/images/Insomnia-8.png)  
 
-9. Press <b>Send</b>. The request should return HTTP code 200 and a response with the converted text.
+9. Click <b>Send</b>. The request should return HTTP code 200 and a response with the converted text.
 
 <br>![image](/exercises/ex2/images/Insomnia-9.png)  
 
