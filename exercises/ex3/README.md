@@ -2,7 +2,7 @@
 
 In this exercise, we will create and migrate a SOAP to REST scenario.	For this particular scenario, not all attributes of the Integrated Configuration Object (ICO) on SAP Process Orchestration could be mapped to the parameters in the integration flow on Cloud Integration, so a couple of manual adjustments will need to be carried out which we will do as a part of the exercise.
 
-1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> Mode. If you haven't run through the previous step, you first need to create an integration apckage. This is described in [Create an Integration package](/exercises/ex3/README.md#create-an-integration-package) of Exercise 2.
+1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> Mode. If you haven't run through the previous step, you first need to create an integration apckage. This is described in [Create an Integration package](/exercises/ex2/#create-an-integration-package) of Exercise 2.
 
 <br>![](/exercises/ex3/images/1.OpenPreviousPackage.png)
 
