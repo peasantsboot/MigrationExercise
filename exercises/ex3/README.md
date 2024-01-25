@@ -105,7 +105,7 @@ MT_Employee_RESP
 
 <br>![image](/exercises/ex3/images/Insomnia-1.png)
 
-2. As name provide **Employee** and click <b>Create</b>.
+2. Maintain a new name and click <b>Create</b>.
 
 <br>![image](/exercises/ex3/images/Insomnia-2.png)
 
@@ -113,7 +113,18 @@ MT_Employee_RESP
 
 <br>![image](/exercises/ex3/images/Insomnia-3.png)
 
-4. Replace the XML Payload with the following value:
+4. Ensure that the following credentials are maintained (note, should be the case as you copied the request):
+
+<br>USERNAME =
+```yaml
+sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
+```
+<br>PASSWORD = 
+```yaml 
+e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
+```
+
+5. Replace the XML Payload with the following value:
 
   ```xml
 <soapenv:Envelope
@@ -132,17 +143,6 @@ MT_Employee_RESP
 ```
 
 <br>![image](/exercises/ex3/images/Insomnia-4.png)
-
-5. Ensure that the following credentials are maintained (note, should be the case as you copied the request):
-
-<br>USERNAME =
-```yaml
-sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
-```
-<br>PASSWORD = 
-```yaml 
-e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
-```
 
 6. Click <b>Send</b>. The response should be "200 OK".
 
