@@ -4,7 +4,7 @@ In this exercise, you will learn how to migrate your existing integration scenar
 
 ## Launch the Migration Assessment page
 
-1. If you haven't done so, login to the tenant provided to you with your user **userxx** and the credentials provided to you.
+1. If you haven't done so, login to the tenant provided to you with your user **userXX** and the credentials provided to you.
       
 2. In the SAP Integration Suite landing page, scroll down to Capabilities, and select **Create Requests** from the **Assess Migration Scenarios** tile.
 
@@ -16,27 +16,17 @@ After completing these steps you will be able to test the connection to your SAP
 
 <b>Note:</b> For this exercise, the connection to a cloud connector has been already established.
 
-1. Navigate to **Settings** and Select **J2E** System to view the details.
+1. Navigate to **Settings** and Select **J2E** System to view the details. For this exercise, the system setup is already done and you can click on <b>Test Connection</b> to check the connection to the SAP Process Orchestration system.
 
 <br>![](/exercises/ex1/images/View_PO_System.png)
-   
-2. For this exercise, the system setup is already done and you can click on <b>Test Connection</b> to check the connection to the SAP Process Orchestration system.
 
-<br>![](/exercises/ex1/images/Test_PO_Con.png)
-   
-3. In the Migration Assessment Application, navigate to **Configure > Rules**
-
-<br>![](/exercises/ex1/images/Configure_Rule.png)  
-
-Here you can find a list of rules predefined by SAP. Rules are a set of characteristics according to which the application evaluates whether an integration scenario can be migrated and what effort you can expect.
+2. In the Migration Assessment Application, navigate to **Configure > Rules**. Here you can find a list of rules predefined by SAP. Rules are a set of characteristics according to which the application evaluates whether an integration scenario can be migrated and what effort you can expect. As an example, select the rule **SenderAdapterType**.
 
 **Note:** Currently, you can’t add custom rules or edit the standard rules. You can only view the standard rules.
 
-4. As an example, select the rule **SenderAdapterType**
+<br>![](/exercises/ex1/images/Configure_Rule.png)  
 
-<br>![](/exercises/ex1/images/Select_Sender_Adapter_Type.png)
-   
-5. Open the variant **MAIN_SenderAdapterType**
+3. Open the variant **MAIN_SenderAdapterType**
 
 <br>![](/exercises/ex1/images/MainSenderAdapterType.png)
 
@@ -48,15 +38,19 @@ Here, you can see all the parameters of the rules, such as Rule Match Value, Ass
 Usually, the data extraction takes some time depending on the number of integration scenarios configured on SAP Process Orchestration. For our exercise, we have configured a handful of scenarios in the SAP Process Orchestration system, so that the extraction runs fast.
 A recommendation from our side would be to reuse the already created Data Extraction Request. If you still want to create a new one, please follow the below steps.
 
-1.	In the Migration Assessment Application, navigate to <b>Request Data Extraction</b>.
+1.	In the Migration Assessment Application, navigate to **Request** and select the **Data Extractions** tile.
 
 <br>![](/exercises/ex1/images/Request_Data_Ext.png)
   	
-2. We recommend you reuse the already existing request as creating a new one would take a few minutes. If you want to create a new request, Click on <b>Create</b>. Otherwise, you can continue with [Create a Scenario Evaluation Request](#create-a-scenario-evaluation-request).
+2. We recommend you to reuse the already existing request as creating a new one would take a few minutes. If you want to create a new request, proceed with the next steps. Otherwise, you can continue with [Create a Scenario Evaluation Request](#create-a-scenario-evaluation-request).
 
-<br>![](/exercises/ex1/images/Ruse_Data_Ext.png)
+<br>![](/exercises/ex1/images/Reuse_Data_Ext.png)
    
-3. Enter a Request Name such as **UserXX-Extraction** where **XX** is the user id assigned to you, and select the System you want to connect to (in our case it is J2E from the drop-down). Click on <b>Create</b>.
+3. In order to create a new request, select **Create**.
+
+<br>![](/exercises/ex1/images/Create_Data_Ext.png)
+
+4. Enter a Request Name such as **UserXX-Extraction** where **XX** is the user id assigned to you, and select the System you want to connect to (in our case it is **J2E** from the drop-down). Click on <b>Create</b>.
 
 <br>![](/exercises/ex1/images/New_Data_Ext.png)
    
