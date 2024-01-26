@@ -19,4 +19,4 @@ After having finished the assessment of the current SAP Process Orchestration la
 
 <br>![](/exercises/ex2/images/Save_Pack.png)
    
-Continue to - [Exercise 2 - Migrate and test a simple P2P scenario](../ex2/README.md)
+Go back to - [Main page](../README.md)
