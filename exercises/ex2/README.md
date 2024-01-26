@@ -1,28 +1,12 @@
 # Exercise 2 - Migrate and test a simple SOAP to SOAP scenario
 
 After having finished the assessment of the current SAP Process Orchestration landscape and having estimated the effort needed to migrate with the Migration Assessment capability, the next step is the actual migration. The goal of the Migration Tool is to provide a semi-automated migration where interfaces in Cloud Integration will be automatically created so ideally 60-70% of technical migration efforts are automated. The migration of scenarios is based on a template approach, which means that integration flow templates are used as a skeleton to migrate the content and create the final integration flows.
-
-## Create an Integration package
-
- As a prerequisite, you first need to create an integration package where the automatically generated integration flows are created.
-
-1. Switch back to the SAP Integration Suite landing page.
-
-<br>![](/exercises/ex2/images/Navigate_Back.png)
-
-2. Navigate to <b>Design > Integrations and APIs</b>, and select  <b>Create</b>.
-
-<br>![](/exercises/ex2/images/Create_Pack.png)
-   
-3. Fill in the <b>Name</b> of the integration package, e.g. **Migration userXX** where <b>XX</b> is your user number from 00 to 99, and a short <b>Description</b>. The technical name is automatically set. Then click <b>Save</b>.
-
-<br>![](/exercises/ex2/images/Save_Pack.png)
-   
+  
 ## Migrate SAP Process Orchestration Artifacts (SOAP to SOAP scenario)
 
 Every Integrated Configuration Object (ICO) that can be migrated has an associated template in the migration tooling. Based on these templates, the migration tooling creates equivalent integration flows in the SAP Integration Suite. Let's start with the actual migration.
 
-1. In the integration package you just created, you should be already in Edit mode. If not, on the top right click <b>Edit</b>.
+1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> Mode. If you haven't created an integration package yet, navigate to [Create an Integration package](/exercises/ex0/#create-an-integration-package), create a new package and then return. Otherwise, proceed with the next steps.
 
 <br>![image](/exercises/ex2/images/EditPackage.png)
    
