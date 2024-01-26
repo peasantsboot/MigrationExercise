@@ -30,13 +30,19 @@ The requirements for this exercise are listed below. Please note that when using
 4. Assign appropriate roles to your user.
 5. Setup destination to SAP Process Orchestration.
 
+## Access to SAP Integration Suite tenant
+
+For running through the exercises, you need access to an SAP Integration Suite tenant.
+
+- Please use this [**SAP Integration Suite tenant**](https://cpisuite-europe-03.integrationsuite.cfapps.eu20-001.hana.ondemand.com/shell/home) for your exercises.
+- Use the user **userXX** with **XX** your ID provided by the instructors and the **password** shared by the instructors to login to the tenant.
+
 ## Exercises
 
 <!-- Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example. -->
 
 In the following, the complete list of exercise steps are listed. Run through them in the given order. You can use this section as an index or table of contents. Use the breadcrumb navigation on top of the pages to go back to the Table of Contents.
 
-- [Getting Started - Access SAP Integration Suite](exercises/ex0/)
 - [Exercise 1 - Migration Assessment](exercises/ex1/)
 - [Exercise 2 - Migrate and test a simple Point-to-Point scenario](exercises/ex2/)
 - [Exercise 3 - Migrate and test a Point-to-Point scenario with JSON conversion](exercises/ex3/)
