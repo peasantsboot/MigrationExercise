@@ -1,8 +1,8 @@
 # Exercise 2 - Migrate and test a simple SOAP to SOAP scenario
 
-After having finished the assessment of the current SAP Process Orchestration landscape and having estimated the effort needed to migrate with the Migration Assessment capability, the next step is the actual migration. The goal of the Migration Tool is to provide a semi-automated migration where interfaces in Cloud Integration will be automatically created so ideally 60-70% of technical migration efforts are automated. The migration of scenarios is based on a template approach, which means that integration flow templates are used as a skeleton to migrate the content and create the final integration flows.
+In this exercise, we will create and migrate a simple SOAP to SOAP scenario to call a web service which converts a number into text.
   
-## Migrate SAP Process Orchestration Artifacts (SOAP to SOAP scenario)
+## Run the Migration Wizard
 
 Every Integrated Configuration Object (ICO) that can be migrated has an associated template in the migration tooling. Based on these templates, the migration tooling creates equivalent integration flows in the SAP Integration Suite. Let's start with the actual migration.
 
