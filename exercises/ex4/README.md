@@ -2,7 +2,9 @@
 
 In this exercise, we will create and migrate a Content-Based-Router scenario, i.e., the source Integrated Configuration Object contains xpath conditions that are carried out to determine the receiver that the message should be sent to.
 
-1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> Mode. If you haven't run through the previous step, you first need to create an own integration package. In this case, navigate to [Create an Integration package](/exercises/ex2/#create-an-integration-package), create a new package and then return. Otherwise, proceed with the next steps.
+## Run the Migration Wizard
+
+1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> Mode. If you haven't created an own integration package yet, navigate to [Create an Integration package](/exercises/ex0/#create-an-integration-package), create a new package and then return. Otherwise, proceed with the next steps.
 
 <br>![](/exercises/ex4/images/04_01.png)
 
