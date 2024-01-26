@@ -41,8 +41,11 @@ For running through the exercises, you need access to an SAP Integration Suite t
 
 <!-- Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example. -->
 
-In the following, the complete list of exercise steps are listed. Run through them in the given order. You can use this section as an index or table of contents. Use the breadcrumb navigation on top of the pages to go back to the Table of Contents.
+In the following, the complete list of exercise steps are listed. You can use this section as an index or table of contents. Use the breadcrumb navigation on top of the pages to go back to the Table of Contents.
 
+If you are interested in how the migration assessment works, start with the first exercise. You do not need to go through all three migration tool exercises, you can pick just one of the exercises depending on your interest. In any case, if you like to run through any of the migration tool exercises, you first need to create an integration package which is described in the Prerequisites chapter.
+
+- [Prerequisites for the Migration Tool exercises](exercises/ex0/)
 - [Exercise 1 - Migration Assessment](exercises/ex1/)
 - [Exercise 2 - Migrate and test a simple Point-to-Point scenario](exercises/ex2/)
 - [Exercise 3 - Migrate and test a Point-to-Point scenario with JSON conversion](exercises/ex3/)
