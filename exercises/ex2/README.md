@@ -6,7 +6,7 @@ In this exercise, we will create and migrate a simple SOAP to SOAP scenario to c
 
 Every Integrated Configuration Object (ICO) that can be migrated has an associated template in the migration tooling. Based on these templates, the migration tooling creates equivalent integration flows in the SAP Integration Suite. Let's start with the actual migration.
 
-1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> Mode. If you haven't created an integration package yet, navigate to [Create an Integration package](/exercises/ex0/#create-an-integration-package), create a new package and then return. Otherwise, proceed with the next steps.
+1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> mode. If you haven't created an integration package yet, navigate to [Create an Integration package](/exercises/ex0/#create-an-integration-package), create a new package and then return. Otherwise, proceed with the next steps.
 
 <br>![image](/exercises/ex2/images/EditPackage.png)
    
