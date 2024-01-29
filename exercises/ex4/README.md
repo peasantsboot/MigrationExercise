@@ -1,6 +1,6 @@
 # Exercise 4 - Migrate and Test a Content-Based-Router Scenario
 
-In this exercise, we will create and migrate a Content-Based-Router scenario, i.e., the source Integrated Configuration Object contains xpath conditions that are carried out to determine the receiver that the message should be sent to. The xpath conditions check the country code, in case of DE the message is sent to the receiver 1, in case of IN to receiver 2 and in case of US to receiver 3. If the condition is not met, the message is discarded. Furthermore, we will create reusable aritfacts in Cloud Integration, i.e., a message mapping and a function library which are uploaded from the SAP Process Orchestration system.
+In this exercise, we will create and migrate a Content-Based-Router scenario, i.e., the source Integrated Configuration Object (ICO) contains xpath conditions that are carried out to determine the receiver that the message should be sent to. In our case. the xpath conditions check the country code, in case of DE the message is sent to receiver 1, in case of IN to receiver 2 and in case of US to receiver 3. If the condition is not met, the message runs into an error. Furthermore, we will create reusable aritfacts in Cloud Integration, i.e., a message mapping and a function library which are uploaded from the SAP Process Orchestration system.
 
 ## Run the Migration Wizard
 
@@ -8,106 +8,126 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-01.png)
 
-2. Click on <b>Migrate</b> to start the migration wizard.
+2. The message mapping of the ICO that we plan to migrate refers to a Function Library with a user defined function for trimming a field mapping. In order to upload the Function Library, we first need to create a Function Library container in Cloud Integration. Select the **Function Libraries** entry below the **Add** menu.
 
 <br>![](/exercises/ex4/images/04-02.png)
 
-3.	Select the SAP Process Orchestration system **J2E** from the drop down menu, then click <b>Next Step</b>.
+3. In the upcoming dialog, enter a **Name** for your function library container, e.g., following the pattern **fl_userXX** where <b>XX</b> is the user number assigned to you. Then click **OK**.
 
 <br>![](/exercises/ex4/images/04-03.png)
 
-4.	Click on <b>Show Filters</b> and fill in **bootcamp** for the **Namespace**. Choose the interface **SI_Employee_Out** with sender **CBR_blah** from the drop-down list. Click <b>Next Step</b>.
+4. Click on <b>Migrate</b> to start the migration wizard.
 
 <br>![](/exercises/ex4/images/04-04.png)
 
-5.	The best fit template is identified. This time, the template **P2P_SYNC_JSON_REC_0001** is proposed. Click <b>Next Step</b>.
+5.	In the migration wizard, select the SAP Process Orchestration system **J2E** from the drop down menu, then click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-05.png)
 
-6. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, select the **Enable Reusable Message Mapping Artifacts** flag. Then, click **Next Step**.
+6.	In the next step, click on <b>Show Filters</b>.
 
 <br>![](/exercises/ex4/images/04-06.png)
 
-7. xxxx
+7.	Fill in **CBR_S02** for the **Sender Communication Component**, and choose the interface **SI_SalesOrder_Out** with sender **CBR_S02** from the drop-down list. Click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-07.png)
 
-7.	Maintain a **Name** for your integration flow, e.g., following the pattern **soap_to_rest_sync_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
+8.	The best fit templates are identified. Beside the default template, you get two migration templates proposed. It is not possible to automatically identify which kind of pattern apply here. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. In our case, select the template **CBR_ASYNC_0001**.
 
 <br>![](/exercises/ex4/images/04-08.png)
 
-8.	Verify the information and click on <b>Migrate</b>.
+9.	Click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-09.png)
 
-9.	Again, the integration flow will be generated within your integration package. As you can see from the summary page, the REST receiver adapter on SAP Process Orchestration has been mapped to the HTTP adapter in Cloud Integration. Click on  **View Artifact** to take a closer look. 
+10. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, we like to create reusable artifacts. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's keep the default setting. The message mapping hasn't been uploaded yet, so the Import Method is set to **Create**. Click **Next Step**.
 
 <br>![](/exercises/ex4/images/04-10.png)
 
-10.	For this particular scenario, not all attributes of the ICO on SAP Process Orchestration could be mapped to the parameters in the integration flow on Cloud Integration, so a couple of manual adjustments need to be carried out.
-
-Note, the attribute mapping will be improved with future increments of the migration tool so that manual interaction is reduced to a bare minimum.
-
-Click on <b>Configure</b>.
+11. In the next step, you can see the message mapping resources. Before we are able to continue, you need to select the function library container that the function library should be added to. Select **Select** next to the **Function Library** type.
 
 <br>![](/exercises/ex4/images/04-11.png)
 
-11. Switch to tab <b>More</b> and select **XML to JSON Converter** as Type.
+12. In the upcoming dialog, select your beforehand created function library container, and click **Select**.
 
 <br>![](/exercises/ex4/images/04-12.png)
 
-12. Enable **Suppress JSON Root Element** and click **Save**.
+13. Click **Next Step**.
 
 <br>![](/exercises/ex4/images/04-13.png)
 
-13. Press <b>Close</b> to close the Message box and <b>close</b> the configure Pop-Up as well.
+14.	Maintain a **Name** for your integration flow, e.g., following the pattern **cbr_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
 
 <br>![](/exercises/ex4/images/04-14.png)
 
-14. Switch to <b>Edit</b> mode at the top right corner
+15.	Verify the information and click on <b>Migrate</b>.
 
 <br>![](/exercises/ex4/images/04-15.png)
 
-15. In the integration flow properties, switch to tab **Runtime Configuration**, and add the following **Namespace Mapping**:
-
-```yaml
-xmlns:ns0=http://pi-elevation.bootcamp.com
-```
-
-<br>![](/exercises/ex4/images/04-16.png)
-
-16.	In the HTTP connection of the **Request Reply** step, verify that the parameters are automatically set based on the receiver channel of the ICO. The values for the Address, the Authentication, and the Credential Name should be preset. Ensure that Authentication is set to **Basic**, and the Credential Name should be **PIMAS_Demo**. If not, change the parameters accordingly.
+16.	Again, the integration flow will be generated within your integration package. Click on  **View Artifact** to take a closer look. 
 
 <br>![](/exercises/ex4/images/04-17.png)
 
-17.	Next, click on the  **JSON to XML Converter** and switch to the **Processing** tab. Select the previously created **Namespace Mapping** by clicking **Select**. Furthermore, enter the **Name** of the root element as follows:
-
-```yaml
-MT_Employee_RESP
-```
+17.	As you can see from the generated integration flow model, a router with four routes have been added: three routes for the three receivers, and one route for the exception case in case that no xpath condition is met. Navigate back to your package.
 
 <br>![](/exercises/ex4/images/04-18.png)
 
-18.	Click <b>Save</b> and then <b>Deploy</b> to deploy the integration flow.
+18. As you can see from the list of artifacts, besides the integration flow a message mapping has been created as well. Let's first open your function library container by clicking the same.
 
 <br>![](/exercises/ex4/images/04-19.png)
 
-19. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**
+19. You can see that a function library with one user defined function has been added. Click **Deploy**.
 
 <br>![](/exercises/ex4/images/04-20.png)
 
-20. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+20. Confirm the upcoming dialog.
 
-<br>![](/exercises/ex4/images/04-21.png)
-   
-21. Your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> to the clipboard as we will use it in the next step.
+21. A toast message will eventually appear informing you that the function libraries artifact has been successfully deployed. Navigate back to your package.
 
 <br>![](/exercises/ex4/images/04-22.png)
+
+22. Next, deploy the generated message mapping **MM_SalesOrderWithFuncLib** by selecting the entry **Deploy** from the action menu.
+
+<br>![](/exercises/ex4/images/04-23.png)
+
+23.	Before deploying the generated integration flow, we first need to configure the sender and receiver adapters. Select the entry **Configure** from the action menu of the integration flow **cbr_userXX** with **XX** your user number.
+
+<br>![](/exercises/ex4/images/04-26.png)
+
+24.	In the upcoming dialog, on tab **Sender**, maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
+
+```yaml
+/cbr/s02/userXX
+```
+
+<br>![](/exercises/ex4/images/04-27.png)
+
+25.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers. Once done, click **Save** and then **Deploy**.
+
+```yaml
+PIMAS_Demo
+```
+
+<br>![](/exercises/ex4/images/04-28.png)
+
+26.	Confirm the upcoming dialog.
+
+27. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**
+
+<br>![](/exercises/ex4/images/04-31.png)
+
+28. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+
+<br>![](/exercises/ex4/images/04-32.png)
+   
+29. Your function libraries artifact, your message mapping, and your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> of your integraiton flow to the clipboard as we will use it in the next steps.
+
+<br>![](/exercises/ex4/images/04-33.png)
 
 
 ## Verify the Interface via Insomnia
 
-1.	Open Insomnia and <b>duplicate</b> the Request you created in exercise 2. 
+1.	Open Insomnia and <b>duplicate</b> the Request you created in one of the previous exercise. If you haven't run through the previous exercises, create a new request with operation POST.
 
 <br>![image](/exercises/ex4/images/Insomnia-1.png)
 
@@ -160,13 +180,21 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 <br>![image](/exercises/ex4/images/Insomnia-5.png)
 
-7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to REST integration flow.
+7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed integration flow.
 
-<br>![](/exercises/ex4/images/04-23.png)
+<br>![](/exercises/ex4/images/04-34.png)
 
-8. In the message monitor, you should see one new log in status **Completed**.
+8. In the message monitor, you should see one new log in status **Completed**. In the **Properties** section of the log, you should see that the message was sent to the **third** receiver.
 
-<br>![](/exercises/ex4/images/04-24.png)
+<br>![](/exercises/ex4/images/04-35.png)
+
+9. Navigate back to Insomnia. Change the country code to **DE**, then click <b>Send</b> again. The response should be "200 OK".
+
+<br>![image](/exercises/ex4/images/Insomnia-6.png)
+
+10. Navigate back to the monitoring page, and refresh. You should see one more new log in status **Completed**. In the **Properties** section of the log, you should see that the message was sent to the **first** receiver.
+
+<br>![](/exercises/ex4/images/04-36.png)
 
 ## Summary
 
