@@ -1,6 +1,6 @@
 # Exercise 4 - Migrate and Test a Content-Based-Router Scenario
 
-In this exercise, we will create and migrate a Content-Based-Router scenario, i.e., the source Integrated Configuration Object (ICO) contains xpath conditions that are carried out to determine the receiver that the message should be sent to. In our case. the xpath conditions check the country code, in case of DE the message is sent to receiver 1, in case of IN to receiver 2 and in case of US to receiver 3. If the condition is not met, the message runs into an error. Furthermore, we will create reusable aritfacts in Cloud Integration, i.e., a message mapping and a function library which are uploaded from the SAP Process Orchestration system.
+In this exercise, we will create and migrate a Content-Based-Router scenario, i.e., the source Integrated Configuration Object (ICO) contains xpath conditions that are carried out to determine the receiver that the message should be sent to. In our case. the xpath conditions check the country code, in case of DE the message is sent to receiver 1, in case of IN to receiver 2 and in case of US to receiver 3. If the condition is not met, the message runs into an error. Furthermore, we will use reusable aritfacts in Cloud Integration, i.e., a message mapping and a function library which have been already uploaded from the SAP Process Orchestration system.
 
 ## Run the Migration Wizard
 
@@ -8,41 +8,41 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-01.png)
 
-2. The message mapping of the ICO that we plan to migrate refers to a Function Library with a user defined function for trimming a field mapping. In order to upload the Function Library, we first need to create a Function Library container in Cloud Integration. Select the **Function Libraries** entry below the **Add** menu.
+2. Click on <b>Migrate</b> to start the migration wizard.
 
-<br>![](/exercises/ex4/images/04-02.png)
+<br>![](/exercises/ex4/images/new-04-09.png)
 
-3. In the upcoming dialog, enter a **Name** for your function library container, e.g., following the pattern **fl_userXX** where <b>XX</b> is the user number assigned to you. Then click **OK**.
-
-<br>![](/exercises/ex4/images/04-03.png)
-
-4. Click on <b>Migrate</b> to start the migration wizard.
-
-<br>![](/exercises/ex4/images/04-04.png)
-
-5.	In the migration wizard, select the SAP Process Orchestration system **J2E** from the drop down menu, then click <b>Next Step</b>.
+3.	In the migration wizard, select the SAP Process Orchestration system **J2E** from the drop down menu, then click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-05.png)
 
-6.	In the next step, click on <b>Show Filters</b>.
+4.	In the next step, click on <b>Show Filters</b>.
 
 <br>![](/exercises/ex4/images/04-06.png)
 
-7.	Fill in **CBR_S02** for the **Sender Communication Component**, and choose the interface **SI_SalesOrder_Out** with sender **CBR_S02** from the drop-down list. Click <b>Next Step</b>.
+5.	Fill in **CBR_S02** for the **Sender Communication Component**, and choose the interface **SI_SalesOrder_Out** with sender **CBR_S02** from the drop-down list. Click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-07.png)
 
-8.	The best fit templates are identified. Beside the default template, you get two migration templates proposed. It is not possible to automatically identify which kind of pattern apply here. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. In our case, select the template **CBR_ASYNC_0001**.
+6.	The best fit templates are identified. Beside the default template, you get two migration templates proposed. It is not possible to automatically identify which kind of pattern apply here. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. In our case, select the template **CBR_ASYNC_0001**.
 
 <br>![](/exercises/ex4/images/04-08.png)
 
-9.	Click <b>Next Step</b>.
+7.	Click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-09.png)
 
-10. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, we like to create reusable artifacts. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's keep the default setting. The message mapping hasn't been uploaded yet, so the Import Method is set to **Create**. Click **Next Step**.
+8. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, we like to reuse artifacts which have been already uploaded to Cloud Integration. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's change the default setting.
 
-<br>![](/exercises/ex4/images/04-10.png)
+<br>![](/exercises/ex4/images/new-04-10.png)
+
+9. In the upcoming dialog, select the integration package ****
+
+<br>![](/exercises/ex4/images/new-04-11.png)
+
+10. The message mapping hasn't been uploaded yet, so the Import Method is set to **Create**. Click **Next Step**.
+
+<br>![](/exercises/ex4/images/new-04-12.png)
 
 11. In the next step, you can see the message mapping resources. Before we are able to continue, you need to select the function library container that the function library should be added to. Select **Select** next to the **Function Library** type.
 
