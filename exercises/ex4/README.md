@@ -32,69 +32,47 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-09.png)
 
-8. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, we like to reuse artifacts which have been already uploaded to Cloud Integration. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's change the default setting.
+8. In the next step, you can choose whether you like to work with reusable message mapping artifacts or not. In this exercise, we like to reuse artifacts which have been already uploaded to Cloud Integration. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's change the default setting. Click **Select** next to the artifact package.
 
 <br>![](/exercises/ex4/images/new-04-10.png)
 
-9. In the upcoming dialog, select the integration package ****
+9. In the upcoming dialog, select the integration package **Migration Reusable Artifacts**. That's where we have uploaded the mapping including the function library to.
 
 <br>![](/exercises/ex4/images/new-04-11.png)
 
-10. The message mapping hasn't been uploaded yet, so the Import Method is set to **Create**. Click **Next Step**.
+10. The wizard detects that the message mapping with name **MM_SalesOrderWithFuncLib** has been already uploaded from the ESR of SAP Process Orchestration, so the Import Method is set to **Reuse**. If not, change to **Reuse** and select the exisitng mapping from the drop down menu.
 
 <br>![](/exercises/ex4/images/new-04-12.png)
 
-11. In the next step, you can see the message mapping resources. Before we are able to continue, you need to select the function library container that the function library should be added to. Select **Select** next to the **Function Library** type.
+11. Click **Next Step**.
 
-<br>![](/exercises/ex4/images/04-11.png)
+<br>![](/exercises/ex4/images/new-04-13.png)
 
-12. In the upcoming dialog, select your beforehand created function library container, and click **Select**.
+12. In the next step, you can see the message mapping resources. No new message is created, the existing one is used. Click **Next Step**.
 
-<br>![](/exercises/ex4/images/04-12.png)
+<br>![](/exercises/ex4/images/new-04-14.png)
 
-13. Click **Next Step**.
-
-<br>![](/exercises/ex4/images/04-13.png)
-
-14.	Maintain a **Name** for your integration flow, e.g., following the pattern **cbr_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
+13.	Maintain a **Name** for your integration flow, e.g., following the pattern **cbr_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
 
 <br>![](/exercises/ex4/images/04-14.png)
 
-15.	Verify the information and click on <b>Migrate</b>.
+14.	Verify the information and click on <b>Migrate</b>.
 
 <br>![](/exercises/ex4/images/04-15.png)
 
-16.	Again, the integration flow will be generated within your integration package. Click on  **View Artifact** to take a closer look. 
+15.	Again, the integration flow will be generated within your integration package. Click on  **View Artifact** to take a closer look. 
 
 <br>![](/exercises/ex4/images/04-17.png)
 
-17.	As you can see from the generated integration flow model, a router with four routes have been added: three routes for the three receivers, and one route for the exception case in case that no xpath condition is met. Navigate back to your package.
+16.	As you can see from the generated integration flow model, a router with four routes have been added: three routes for the three receivers, and one route for the exception case in case that no xpath condition is met. Navigate back to your package.
 
 <br>![](/exercises/ex4/images/04-18.png)
 
-18. As you can see from the list of artifacts, besides the integration flow a message mapping has been created as well. Let's first open your function library container by clicking the same.
+17. A new integration flow has been created. Before deploying the generated integration flow, we first need to configure the sender and receiver adapters. Select the entry **Configure** from the action menu of the integration flow **cbr_userXX** with **XX** your user number.
 
-<br>![](/exercises/ex4/images/04-19.png)
+<br>![](/exercises/ex4/images/new-04-15.png)
 
-19. You can see that a function library with one user defined function has been added. Click **Deploy**.
-
-<br>![](/exercises/ex4/images/04-20.png)
-
-20. Confirm the upcoming dialog.
-
-21. A toast message will eventually appear informing you that the function libraries artifact has been successfully deployed. Navigate back to your package.
-
-<br>![](/exercises/ex4/images/04-22.png)
-
-22. Next, deploy the generated message mapping **MM_SalesOrderWithFuncLib** by selecting the entry **Deploy** from the action menu.
-
-<br>![](/exercises/ex4/images/04-23.png)
-
-23.	Before deploying the generated integration flow, we first need to configure the sender and receiver adapters. Select the entry **Configure** from the action menu of the integration flow **cbr_userXX** with **XX** your user number.
-
-<br>![](/exercises/ex4/images/04-26.png)
-
-24.	In the upcoming dialog, on tab **Sender**, maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
+18.	In the upcoming dialog, on tab **Sender**, maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
 
 ```yaml
 /cbr/s02/userXX
@@ -102,7 +80,7 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-27.png)
 
-25.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers. Once done, click **Save** and then **Deploy**.
+19.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers. Once done, click **Save** and then **Deploy**.
 
 ```yaml
 PIMAS_Demo
@@ -110,19 +88,21 @@ PIMAS_Demo
 
 <br>![](/exercises/ex4/images/04-28.png)
 
-26.	Confirm the upcoming dialog.
+20.	Confirm the upcoming dialog.
 
-27. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**
+<br>![](/exercises/ex4/images/04-29.png)
 
-<br>![](/exercises/ex4/images/04-31.png)
+21. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**
 
-28. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+<br>![](/exercises/ex4/images/new-04-18.png)
+
+22. On the monitoring page, select the <b>Manage Integration Content</b> tile.
 
 <br>![](/exercises/ex4/images/04-32.png)
    
-29. Your function libraries artifact, your message mapping, and your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> of your integraiton flow to the clipboard as we will use it in the next steps.
+23. Your integration flow should be in status <b>Started</b>. You can also see that the resuable function libraries artifact and message mapping has been already deployed. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> of your integraiton flow to the clipboard as we will use it in the next steps.
 
-<br>![](/exercises/ex4/images/04-33.png)
+<br>![](/exercises/ex4/images/new-04-16.png)
 
 
 ## Verify the Interface via Insomnia
@@ -182,7 +162,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed integration flow.
 
-<br>![](/exercises/ex4/images/04-34.png)
+<br>![](/exercises/ex4/images/new-04-17.png)
 
 8. In the message monitor, you should see one new log in status **Completed**. In the **Properties** section of the log, you should see that the message was sent to the **third** receiver.
 
