@@ -35,7 +35,7 @@ The requirements for this exercise are listed below. Please note that when using
 For running through the exercises, you need access to an SAP Integration Suite tenant.
 
 - Please use this [**SAP Integration Suite tenant**](https://cpisuite-europe-03.integrationsuite.cfapps.eu20-001.hana.ondemand.com/shell/home) for your exercises.
-- Use the user **userXX** with **XX** your ID provided by the instructors and the **password** shared by the instructors to login to the tenant.
+- Use the user **userXX** with **XX** your ID provided by the instructors and the password **Welcome1** to login to the tenant.
 
 ## Exercises
 
