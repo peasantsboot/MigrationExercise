@@ -34,7 +34,7 @@ Every Integrated Configuration Object (ICO) that can be migrated has an associat
 
 <br>![](/exercises/ex2/images/NoReusableArtifacts.png)
 
-8. Maintain any **Name** for your integration flow, e.g. following the pattern: **soap_to_soap_sync_userXX where <b>XX</b> is your user id from 00 to 99. Note, that the ID of your integration flow needs to be unique across all integration flows on the tenant. Click on <b>Review</b>.
+8. Maintain any **Name** for your integration flow, e.g. following the pattern: **soap_to_soap_sync_userXX** where <b>XX</b> is your user id from 00 to 99. Note, that the ID of your integration flow needs to be unique across all integration flows on the tenant. Click on <b>Review</b>.
 
 <br>![](/exercises/ex2/images/Int_Name_Review.png)
     
