@@ -15,8 +15,8 @@ After having finished the assessment of the current SAP Process Orchestration la
 
 <br>![](/exercises/ex2/images/Create_Pack.png)
    
-3. Fill in the <b>Name</b> of the integration package, e.g. **Migration userXX** where <b>XX</b> is your user number from 00 to 99, and a short <b>Description</b>. The technical name is automatically set. Then click <b>Save</b>.
+3. Fill in the <b>Name</b> of the integration package, e.g. **User XX** where <b>XX</b> is your user number from 00 to 99, and a short <b>Description</b>. The technical name is automatically set. Then click <b>Save</b>.
 
-<br>![](/exercises/ex2/images/Save_Pack.png)
+<br>![](/exercises/ex2/images/00-02-SavePackage.png)
    
 Go back to - [Main page](../../README.md)
