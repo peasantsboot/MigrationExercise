@@ -4,7 +4,7 @@ In this exercise, we will create and migrate a simple SOAP to SOAP scenario to c
   
 ## Run the Migration Wizard
 
-Every Integrated Configuration Object (ICO) that can be migrated has an associated template in the migration tooling. Based on these templates, the migration tooling creates equivalent integration flows in the SAP Integration Suite. Let's start with the actual migration.
+Every Integrated Configuration Object (ICO) that can be migrated has an associated pattern in the migration tooling. Based on these patterns, the migration tooling creates equivalent integration flows in the SAP Integration Suite. Let's start with the actual migration.
 
 1. Open your previously created package, and switch to the <b>Artifacts</b> tab, then switch to <b>Edit</b> mode. If you haven't created an integration package yet, navigate to [Create an Integration package](/exercises/ex0/#create-an-integration-package), create a new package and then return. Otherwise, proceed with the next steps.
 
@@ -26,9 +26,9 @@ Every Integrated Configuration Object (ICO) that can be migrated has an associat
 
 <br>![image](/exercises/ex2/images/ChooseScenario.png)
 
-6. The best-fit template is identified by the migration framework and will be automatically filled in for you. In this case, it will be **P2P_SYNC_0001**. Click <b>Next Step</b>.
+6. The best-fit pattern is identified by the migration framework and will be automatically filled in for you. In this case, it will be **Point-to-Point Synchronous**. Click <b>Next Step</b>.
 
-<br>![](/exercises/ex2/images/Template.png)
+<br>![](/exercises/ex2/images/P2PSyncPattern.png)
 
 7. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, **unselect** the **Enable Reusable Message Mapping Artifacts** flag. Then, click <b>Next Step</b>
 
