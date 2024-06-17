@@ -20,9 +20,9 @@ In this exercise, we will create and migrate a SOAP to REST scenario.	For this p
 
 <br>![](/exercises/ex3/images/3.1_Migrate_SelectPO_Artifacts.png)
 
-5.	The best fit template is identified. This time, the template **P2P_SYNC_JSON_REC_0001** is proposed. Click <b>Next Step</b>.
+5.	The best fit pattern **Point-to-Point Synchronous** is proposed. Click <b>Next Step</b>.
 
-<br>![](/exercises/ex3/images/3.2_Migrate_SelectPO_Template.png)
+<br>![](/exercises/ex3/images/P2PSyncPattern.png)
 
 6. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, unselect the **Enable Reusable Message Mapping Artifacts** flag. Then, click **Next Step**.
 
