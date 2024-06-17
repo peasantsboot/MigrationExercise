@@ -24,55 +24,47 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-07.png)
 
-6.	The best fit templates are identified. Beside the default template, you get two migration templates proposed. It is not possible to automatically identify which kind of pattern apply here. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. In our case, select the template **CBR_ASYNC_0001**.
+6.	The best fit pattern is identified. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. Right now however, for content-based routing as well as recipient list scenarios, the **Recipient List Asynchronous** pattern is proposed. This may change in future to simplify the integration flow model for content-based routing scenarios. Click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-08.png)
 
-7.	Click <b>Next Step</b>.
-
-<br>![](/exercises/ex4/images/04-09.png)
-
-8. In the next step, you can choose whether you like to work with reusable message mapping artifacts or not. In this exercise, we like to reuse artifacts which have been already uploaded to Cloud Integration. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's change the default setting. Click **Select** next to the artifact package.
+7. In the next step, you can choose whether you like to work with reusable message mapping artifacts or not. In this exercise, we like to reuse artifacts which have been already uploaded to Cloud Integration. So, keep the **Enable Reusable Message Mapping Artifacts** flag selected. As you can see, you have the option to select the integration package where the reusable artifact should be uploaded to. By default, the integration package is preset from where you started the migration wizard. Let's change the default setting. Click **Select** next to the artifact package.
 
 <br>![](/exercises/ex4/images/new-04-10.png)
 
-9. In the upcoming dialog, select the integration package **Migration Reusable Artifacts**. That's where we have uploaded the mapping including the function library to.
+8. In the upcoming dialog, select the integration package **Migration Reusable Artifacts**. That's where we have uploaded the mapping including the function library to.
 
 <br>![](/exercises/ex4/images/new-04-11.png)
 
-10. The wizard detects that the message mapping with name **MM_SalesOrderWithFuncLib** has been already uploaded from the ESR of SAP Process Orchestration, so the Import Method is set to **Reuse**. If not, change to **Reuse** and select the exisitng mapping from the drop down menu.
+9. The wizard detects that the message mapping with name **MM_SalesOrderWithFuncLib** has been already uploaded from the ESR of SAP Process Orchestration, so the Import Method is set to **Reuse**. If not, change to **Reuse** and select the exisitng mapping from the drop down menu.
 
 <br>![](/exercises/ex4/images/new-04-12.png)
 
-11. Click **Next Step**.
+10. Click **Next Step**.
 
 <br>![](/exercises/ex4/images/new-04-13.png)
 
-12. In the next step, you can see the message mapping resources. No new message is created, the existing one is used. Click **Next Step**.
+11. In the next step, you can see the message mapping resources. No new message is created, the existing one is used. Click **Next Step**.
 
 <br>![](/exercises/ex4/images/new-04-14.png)
 
-13.	Maintain a **Name** for your integration flow, e.g., following the pattern **cbr_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
+12.	Maintain a **Name** for your integration flow, e.g., following the pattern **cbr_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
 
 <br>![](/exercises/ex4/images/04-14.png)
 
-14.	Verify the information and click on <b>Migrate</b>.
+13.	Verify the information and click on <b>Migrate</b>.
 
 <br>![](/exercises/ex4/images/04-15.png)
 
-15.	Again, the integration flow will be generated within your integration package. Click on  **View Artifact** to take a closer look. 
+14.	The integration flow will be generated within your integration package. Click on  **View Artifact** to take a closer look. 
 
 <br>![](/exercises/ex4/images/04-17.png)
 
-16.	As you can see from the generated integration flow model, a router with four routes have been added: three routes for the three receivers, and one route for the exception case in case that no xpath condition is met. Navigate back to your package.
+15.	As you can see from the generated integration flow model, a parallel multicast with three branches have been added, one branch for each receiver. Within each branch, a router condition checks if the message should be sent to the particular receiver. Furthermore, right before the parallel multicast one router condition handles the exception case that no xpath condition is met. Click on **Configure** to configure the sender and receiver adapters.
 
 <br>![](/exercises/ex4/images/04-18.png)
 
-17. A new integration flow has been created. Before deploying the generated integration flow, we first need to configure the sender and receiver adapters. Select the entry **Configure** from the action menu of the integration flow **cbr_userXX** with **XX** your user number.
-
-<br>![](/exercises/ex4/images/new-04-15.png)
-
-18.	In the upcoming dialog, on tab **Sender**, maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
+16.	In the upcoming dialog, on tab **Sender**, select the Sender **CBR_S02** and maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
 
 ```yaml
 /cbr/s02/userXX
@@ -80,13 +72,21 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-27.png)
 
-19.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers. Once done, click **Save** and then **Deploy**.
+17. Select the Sender **JMSSender**, and maintain the Queue Name **userXX** with **XX** the user number assigned to you.
+
+<br>![](/exercises/ex4/images/04-27a.png)
+
+18.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers **CBR_R01**, **CBR_R02**, and **CBR_R03**.
 
 ```yaml
 PIMAS_Demo
 ```
 
 <br>![](/exercises/ex4/images/04-28.png)
+
+19.	Select the Receiver **JMSReceiver**, and maintain exactly the same Queue Name as before, i.e., **userXX** with **XX** the user number assigned to you. Once done, click **Save** and then **Deploy**.
+
+<br>![](/exercises/ex4/images/04-28a.png)
 
 20.	Confirm the upcoming dialog.
 
@@ -164,7 +164,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 <br>![](/exercises/ex4/images/new-04-17.png)
 
-8. In the message monitor, you should see one new log in status **Completed**. In the **Properties** section of the log, you should see that the message was sent to the **third** receiver.
+8. In the message monitor, you should see two new logs in status **Completed**, one for the integration process writing to the JMS queue, and one for the integration process reading from the very same queue. In the **Properties** section of the logs, you should see that the message was sent to the **third** receiver.
 
 <br>![](/exercises/ex4/images/04-35.png)
 
@@ -172,7 +172,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 <br>![image](/exercises/ex4/images/Insomnia-6.png)
 
-10. Navigate back to the monitoring page, and refresh. You should see one more new log in status **Completed**. In the **Properties** section of the log, you should see that the message was sent to the **first** receiver.
+10. Navigate back to the monitoring page, and refresh. You should see two more new logs in status **Completed**. In the **Properties** section of the logs, you should see that the message was sent to the **first** receiver.
 
 <br>![](/exercises/ex4/images/04-36.png)
 
