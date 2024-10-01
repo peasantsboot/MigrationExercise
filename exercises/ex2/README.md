@@ -10,7 +10,7 @@ Every Integrated Configuration Object (ICO) that can be migrated has an associat
 
 <br>![image](/exercises/ex2/images/EditPackage.png)
    
-2. Switch to tab <b>Artifacts</b> and click on  <b>Migrate</b> to start the migration wizard.
+2. Click on  <b>Migrate</b> to start the migration wizard.
 
 <br>![](/exercises/ex2/images/Migrate.png)
    
@@ -63,7 +63,7 @@ After completing these steps you will be able to deploy the Integration flow and
 
 <br>![](/exercises/ex2/images/Deploy_Con2.png)
   
-4. You can check the deployment status via the monitor dashboard. Navigate to <b>Monitor > Integrations and APIs</b>.
+4. Once successfully deployed, you can see the deployment status on top of the integration flow. Furthermore, you can check the deployment status via the monitor dashboard. Navigate to <b>Monitor > Integrations and APIs</b>.
 
 <br>![](/exercises/ex2/images/Monitor_Int.png)
 
