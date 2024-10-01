@@ -63,15 +63,11 @@ After completing these steps you will be able to deploy the Integration flow and
 
 <br>![](/exercises/ex2/images/Deploy_Con2.png)
   
-4. Once successfully deployed, you can see the deployment status on top of the integration flow. Furthermore, you can check the deployment status via the monitor dashboard. Navigate to <b>Monitor > Integrations and APIs</b>.
-
-<br>![](/exercises/ex2/images/Monitor_Int.png)
-
-5. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+4. You can check the deployment status via the monitor dashboard. Navigate to <b>Monitor > Integrations and APIs</b>. On the monitoring page, select the <b>Manage Integration Content</b> tile.
 
 <br>![](/exercises/ex2/images/ManageIntContentTile.png)
    
-6. Your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> as we will use it in the next step.
+5. Your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> as we will use it in the next step.
 
 <br>![](/exercises/ex2/images/Copy_endpoint.png)
    
