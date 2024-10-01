@@ -33,38 +33,18 @@ After completing these steps you will be able to test the connection to your SAP
 Here, you can see all the parameters of the rules, such as Rule Match Value, Assessment Category, and the Weight assigned to each rule match value. Based on these weights, the application calculates the estimated effort, which means that some parameters, and therefore rules, have a bigger influence on the final estimation than others.
 
  
-## Reuse or Create a new Data Extraction Request
+## Reuse an existing Data Extraction Request
 
-Usually, the data extraction takes some time depending on the number of integration scenarios configured on SAP Process Orchestration. For our exercise, we have configured a handful of scenarios in the SAP Process Orchestration system, so that the extraction runs fast.
-A recommendation from our side would be to reuse the already created Data Extraction Request. If you still want to create a new one, please follow the below steps.
+Usually, the data extraction takes some time depending on the number of integration scenarios configured on SAP Process Orchestration. For our exercise, we have configured just a handful of scenarios in the SAP Process Orchestration system, so that the extraction runs faster compared to a real customer system.
+Nevertheless, you do not need to run an extraction, instead you can reuse the already created and completed Data Extraction Request. If by accident the data extraction has been deleted, you can create a new one.
 
 1.	In the Migration Assessment Application, navigate to **Request** and select the **Data Extractions** tile.
 
 <br>![](/exercises/ex1/images/Request_Data_Ext.png)
   	
-2. We recommend you to reuse the already existing request as creating a new one would take a few minutes. If you want to create a new request, proceed with the next steps. Otherwise, you can continue with [Create a Scenario Evaluation Request](#create-a-scenario-evaluation-request).
+2. As you can see, we have already run the data extraction. The status is **Completed** with warnings since some of the integration scnearios have not been fully extracted. From the **Actions** menu, you can enter the extraction dashboard and the logs to get more details about the extraction status.
 
 <br>![](/exercises/ex1/images/Reuse_Data_Ext.png)
-   
-3. In order to create a new request, select **Create**.
-
-<br>![](/exercises/ex1/images/Create_Data_Ext.png)
-
-4. Enter a Request Name such as **UserXX-Extraction** where **XX** is the user id assigned to you, and select the System you want to connect to (in our case it is **J2E** from the drop-down). Click on <b>Create</b>.
-
-<br>![](/exercises/ex1/images/New_Data_Ext.png)
-   
-5. The data extraction starts. It should show the status <b>In Progress</b>. From time to time, you can refresh to check if the request has been completed.
-
-<br>![](/exercises/ex1/images/Extraction_In_Progress.png)
-   
-6. Once the extraction finishes, the new request appears in the list of data extraction requests with the status <b>Completed</b>. Choose the  <b>Check extraction logs</b> icon to view the data extraction log which provides you with details about the data extraction.
-
-<br>![](/exercises/ex1/images/Completed_Data_Ext.png)
-   
-7. The log shows you the different steps of the data extraction, its progress if still In Progress, warnings and errors during the extraction, etc. In the log, you can filter on the log level. Furthermore, you can download the log in Excel format.
-
-<br>![](/exercises/ex1/images/Ext_Logs.png)
    
 ## Create a Scenario Evaluation Request
 
@@ -82,7 +62,7 @@ Assess your integration scenarios using the information from the data extraction
 
 <br>![](/exercises/ex1/images/Select_Create.png)
    
-4. Enter a Request Name such as **UserXX-Evaluation** where **XX** is the user id assigned to you and choose a Data Extraction Request from the drop-down or the one you executed previously. For this specific run of your scenario evaluation, enter an Evaluation Run Name such as **UserXX-EvaluationRun** (where **XX** is your user from 00 to 99) and a Description.
+4. Enter a Request Name such as **UserXX-Evaluation** where **XX** is the user id assigned to you and choose the existing Data Extraction Request from the drop-down. For this specific run of your scenario evaluation, enter an Evaluation Run Name such as **UserXX-Evaluation-Run** (where **XX** is your user from 00 to 99) and a Description.
 
 <br>![](/exercises/ex1/images/Create_Sce_Eval.png)
 
@@ -90,7 +70,7 @@ Assess your integration scenarios using the information from the data extraction
 
 5. The new request appears in the list of scenario evaluation requests in Status <b>In Progress</b>.
 
-<br>![](/exercises/ex1/images/Extraction_In_Progress.png)
+<br>![](/exercises/ex1/images/Evaluation_In_Progress.png)
    
 6. Refresh and wait until the request changes to status <b>Completed</b>. Different Actions can be performed for a scenario evaluation request.
 
@@ -107,20 +87,24 @@ Access and download analysis of your scenario evaluation runs with details speci
 2. The dashboard shows you an analysis of your scenario evaluation runs with details specific to your integration scenarios, i.e., scenarios grouped by assessment categories, scenarios grouped by rough t-shirt effort estimation, statistics about adapters used in your integration scenarios, etc. You can switch between the data of all runs performed for the scenario evaluation request so far (note, if you haven’t triggered another analysis, there is only one entry in the drop-down menu).
 
 <br>![](/exercises/ex1/images/Overview_Dash.png)
+
+3. Scoll down a bit. This shows you the statistics of the modernization recommendations. Instead of pure lift and shift, alternative implementation options are recommended in terms of integration styles, protocols, and security.
+
+<br>![](/exercises/ex1/images/Overview_Recommendations.png)
    
-3. Switch to the <b>Integration Scenarios</b> tab, and you see the list of all integration scenarios including effort size and assessment category.
+4. Switch to the <b>Integration Scenarios</b> tab, and you see the list of all integration scenarios including effort size and assessment category.
 
 <br>![](/exercises/ex1/images/Dashboard.png)
    
-4. Switch back to the list of <b>Scenario Evaluation</b> requests. From the Additional Options menu, you can select <b>Trigger Analysis</b> to schedule a new evaluation run based on the most recent data extraction. Let's skip this for now as data did not change. Furthermore, you have the option to download details about the latest evaluation run either in an Excel format or as a PDF file.
+5. Switch back to the list of <b>Scenario Evaluation</b> requests. From the Additional Options menu, you can select <b>Trigger Analysis</b> to schedule a new evaluation run based on the most recent data extraction. Let's skip this for now as data did not change. Furthermore, you have the option to download details about the latest evaluation run either in an Excel format or as a PDF file.
 
 <br>![](/exercises/ex1/images/Eval_Actions.png)
      
-5. The option as .xlsx file lists all integration scenarios that were part of the request with migration effort and status as well as the rules applied to them.
+6. The option as .xlsx file lists all integration scenarios that were part of the request with migration effort and status as well as the rules applied to them. In addtion, you find a tab providing more details about the modernization recommendations.
 
 <br>![](/exercises/ex1/images/Excel.png)
 
-6. The option as .pdf file features the previously mentioned details about the integration scenarios while also providing a written summary of adapters and the assessment in general, with charts and tables as visual aids. It also maps the t-shirt effort estimation to effort estimation in person days based on project experience. This file is suited as a summarizing report, that can be used for example for management.
+7. The option as .pdf file features the previously mentioned details about the integration scenarios while also providing a written summary of adapters and the assessment in general, with charts and tables as visual aids. It also maps the t-shirt effort estimation to effort estimation in person days based on project experience. This file is suited as a summarizing report, that can be used for example for management.
 
 <br>![](/exercises/ex1/images/pdf.png)
 
