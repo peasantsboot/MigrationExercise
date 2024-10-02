@@ -28,6 +28,7 @@ As a prerequisite, you first need to create an integration package where the aut
 To run the integration scenarios, you can use any API test client of your choice. In our exercise scripts,
 we use the open source API client Bruno for which we have prepared a collection.
 The collection contains sample requests and environment parameters to authenticate at the provided tenant.
+Skip those steps if you prefer to use your own API client tool.
 
 ### Download and install Bruno's desktop application
 
