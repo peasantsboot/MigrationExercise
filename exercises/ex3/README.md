@@ -66,7 +66,7 @@ MT_Employee_RESP
 
 <br>  ![image](/exercises/ex3/images/ex3-17.png)
 
-14. In the upcoming dialog, select the **Cloud Integration runtime** and select **Yes**. Then, confirm the next dialog.
+14. In the upcoming dialog, select the **Cloud Integration** runtime and select **Yes**. Then, confirm the next dialog.
 
 <br>  ![image](/exercises/ex3/images/ex3-17a.png)
 
