@@ -40,31 +40,13 @@ In this exercise, we will create and migrate a SOAP to REST scenario.	For this p
 
 <br>![](/exercises/ex3/images/4.0_Migration_Success.png)
 
-10.	For this particular scenario, not all attributes of the ICO on SAP Process Orchestration could be mapped to the parameters in the integration flow on Cloud Integration, so a couple of manual adjustments need to be carried out.
+**Note**: for this particular scenario, not all attributes of the ICO on SAP Process Orchestration could be mapped to the parameters in the integration flow on Cloud Integration, so a couple of manual adjustments need to be carried out. The attribute mapping will be improved with future increments of the migration tool so that manual interaction is reduced to a bare minimum.
 
-Note, the attribute mapping will be improved with future increments of the migration tool so that manual interaction is reduced to a bare minimum.
-
-Click on <b>Configure</b>.
-
-<br>![image](/exercises/ex3/images/ex3-9.png)
-
-11. Switch to tab <b>More</b> and select **XML to JSON Converter** as Type.
-
-<br>![image](/exercises/ex3/images/ex3-10.png)
-
-12. Enable **Suppress JSON Root Element** and click **Save**.
-
-<br>![image](/exercises/ex3/images/ex3-11.png)
-
-13. Press <b>Close</b> to close the Message box and <b>close</b> the configure Pop-Up as well.
-
-![image](/exercises/ex3/images/ex3-12.png)
-
-14. Switch to <b>Edit</b> mode at the top right corner
+10. Switch to <b>Edit</b> mode at the top right corner.
 
 <br>![image](/exercises/ex3/images/ex3-13.png)
 
-15. In the integration flow properties, switch to tab **Runtime Configuration**, and add the following **Namespace Mapping**:
+11. In the integration flow properties, switch to tab **Runtime Configuration**, and add the following **Namespace Mapping**:
 
 ```yaml
 xmlns:ns0=http://pi-elevation.bootcamp.com
@@ -72,11 +54,7 @@ xmlns:ns0=http://pi-elevation.bootcamp.com
 
 <br>![](/exercises/ex3/images/5.0_View_iFlow_Changes_to_Make.png)
 
-16.	In the HTTP connection of the **Request Reply** step, verify that the parameters are automatically set based on the receiver channel of the ICO. The values for the Address, the Authentication, and the Credential Name should be preset. Ensure that Authentication is set to **Basic**, and the Credential Name should be **PIMAS_Demo**. If not, change the parameters accordingly.
-
-<br>![](/exercises/ex3/images/5.2_Edit_iFlow_Request_Reply.png)
-
-17.	Next, click on the  **JSON to XML Converter** and switch to the **Processing** tab. Select the previously created **Namespace Mapping** by clicking **Select**. Furthermore, enter the **Name** of the root element as follows:
+12.	Next, click on the  **JSON to XML Converter** and switch to the **Processing** tab. Select the previously created **Namespace Mapping** by clicking **Select**. Furthermore, enter the **Name** of the root element as follows:
 
 ```yaml
 MT_Employee_RESP
@@ -84,24 +62,47 @@ MT_Employee_RESP
 
 <br>![](/exercises/ex3/images/5.3_Edit_iFlow_JSON_to_XML.png)
 
-18.	Click <b>Save</b> and then <b>Deploy</b> to deploy the integration flow.
+13.	Click <b>Save</b> and then <b>Deploy</b> to deploy the integration flow.
 
 <br>  ![image](/exercises/ex3/images/ex3-17.png)
 
-19. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**
+14. In the upcoming dialog, select the **Cloud Integration runtime** and select **Yes**. Then, confirm the next dialog.
 
-<br>   ![image](/exercises/ex3/images/ex3-17a.png)
+<br>  ![image](/exercises/ex3/images/ex3-17a.png)
 
-20. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+15. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**. On the monitoring page, select the <b>Manage Integration Content</b> tile.
 
 <br>   ![image](/exercises/ex3/images/ex3-18.png)
    
-21. Your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> to the clipboard as we will use it in the next step.
+16. Your integration flow should be in status <b>Started</b>. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> to the clipboard as we will use it in the next step.
 
 <br>![image](/exercises/ex3/images/ex3-19.png)
 
 
-## Verify the Interface via Insomnia
+## Verify the Interface
+
+
+
+### Option 1
+
+6. Click <b>Send</b>.
+
+<br>![image](/exercises/ex3/images/bruno-request-send.png)
+
+6. The response should be "200 OK".
+
+<br>![image](/exercises/ex3/images/bruno-request-successful.png)
+
+7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to REST integration flow.
+
+<br>![image](/exercises/ex3/images/ex3-20.png)
+
+8. In the message monitor, you should see one new log in status **Completed**.
+
+<br>![image](/exercises/ex3/images/ex3-21.png)
+
+
+### Option 2
 
 1.	Open Insomnia and <b>duplicate</b> the Request you created in exercise 2. 
 
@@ -146,17 +147,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 <br>![image](/exercises/ex3/images/Insomnia-4.png)
 
-6. Click <b>Send</b>. The response should be "200 OK".
 
-<br>![image](/exercises/ex3/images/Insomnia-5.png)
-
-7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to REST integration flow.
-
-<br>![image](/exercises/ex3/images/ex3-20.png)
-
-8. In the message monitor, you should see one new log in status **Completed**.
-
-<br>![image](/exercises/ex3/images/ex3-21.png)
 
 ## Summary
 
