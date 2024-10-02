@@ -184,7 +184,7 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 
 5.	Trigger a message. Upon success, you will receive **200 OK** status as a response.
 6.	Change the country code to **DE** and resend.
-7.	For monitoring the message in the message monitor of SAP Integration Suite, see steps 3 and following in [option 1](#option-1-using-bruno-api-client).
+7.	For monitoring the message in the message monitor of SAP Integration Suite, see from step 3 on in [option 1](#option-1-using-bruno-api-client).
 
 ## Summary
 
