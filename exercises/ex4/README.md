@@ -105,32 +105,51 @@ PIMAS_Demo
 <br>![](/exercises/ex4/images/new-04-16.png)
 
 
-## Verify the Interface via Insomnia
+## Verify the Interface
 
-1.	Open Insomnia and <b>duplicate</b> the Request you created in one of the previous exercise. If you haven't run through the previous exercises, create a new request with operation POST.
+After completing these steps you will be able to test the interface.
 
-<br>![image](/exercises/ex4/images/Insomnia-1.png)
+**Note**: You have two options to execute and test your integration scenario:
+- The quickest option is to use the Bruno API client application for which we have provided a collection with pre-configured sample request. As a prerequisite to test your integration scenario using the Bruno API client, you should have gone through [Setup Bruno API client](../ex0#setup-bruno-api-client/). If not, do the setup, then come back and proceed with [option 1](#option-1-using-bruno-api-client).
+- If you like to use your own tool, we have described in detail how to setup a sample request incl. body and authentication. This is described in [option 2](#option-2-using-your-own-api-client).
 
-2. Maintain a new name and click <b>Create</b>.
+### Option 1: Using Bruno API client
 
-<br>![image](/exercises/ex4/images/Insomnia-2.png)
+1. Open the Bruno application on your laptop, expand the **Migration Exercises** collection and select the POST request **Exercise 4 - Content-Based-Router**. Paste the copied end point from the clipboard into the URL field or simply replace the **XX** in the URL with the id provided to you. Ensure that the **eu03** environment has been selected. Then trigger a message by selecting the **Send Request** button on the upper right.
 
-3. <b>Replace the URL</b> with the endpoint of your new integration flow.
+<br>![image](/exercises/ex3/images/bruno-04-01.png)
 
-<br>![image](/exercises/ex4/images/Insomnia-3.png)
+2. Upon success, you will receive **200 OK** status.
 
-4. Ensure that the following credentials are maintained (note, should be the case as you copied the request):
+<br>![image](/exercises/ex3/images/bruno-04-02.png)
 
-<br>USERNAME =
-```yaml
-sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
-```
-<br>PASSWORD = 
-```yaml 
-e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
-```
+3. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed integration flow.
 
-5. Replace the XML Payload with the following value:
+<br>![](/exercises/ex4/images/new-04-17.png)
+
+4. In the message monitor, you should see two new logs in status **Completed**, one for the integration process writing to the JMS queue, and one for the integration process reading from the very same queue. In the **Properties** section of the logs, you should see that the message was sent to the **third** receiver.
+
+<br>![](/exercises/ex4/images/04-35.png)
+
+5. Navigate back to Bruno. Change the country code to **DE**, then click <b>Send</b> again. The response should be "200 OK".
+
+<br>![image](/exercises/ex4/images/bruno-04-03.png)
+
+6. Navigate back to the monitoring page, and refresh. You should see two more new logs in status **Completed**. In the **Properties** section of the logs, you should see that the message was sent to the **first** receiver.
+
+<br>![](/exercises/ex4/images/04-36.png)
+
+Scroll down to proceed to the next exercise.
+
+### Option 2: Using your own API client
+
+Skip this option if you have used the Bruno API client to test the integration scenario.
+
+1. Open your own API client and create a new **POST** request.
+
+2. Paste the copied end point from the clipboard into the URL field.
+
+3. Define the payload of type XML as follows.
 
   ```xml
 <pi:MT_SalesOrder_0001 xmlns:pi="http://pi-elevation.bootcamp.com">
@@ -154,27 +173,20 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 </pi:MT_SalesOrder_0001>
 ```
 
-<br>![image](/exercises/ex4/images/Insomnia-4.png)
+4. To authenticate to the Cloud Integration runtime, select **Basic Authentication** and maintain the credentials as follows.
 
-6. Click <b>Send</b>. The response should be "200 OK".
+<br>User name =
+```yaml
+sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
+```
+<br>Password = 
+```yaml 
+e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
+```
 
-<br>![image](/exercises/ex4/images/Insomnia-5.png)
-
-7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed integration flow.
-
-<br>![](/exercises/ex4/images/new-04-17.png)
-
-8. In the message monitor, you should see two new logs in status **Completed**, one for the integration process writing to the JMS queue, and one for the integration process reading from the very same queue. In the **Properties** section of the logs, you should see that the message was sent to the **third** receiver.
-
-<br>![](/exercises/ex4/images/04-35.png)
-
-9. Navigate back to Insomnia. Change the country code to **DE**, then click <b>Send</b> again. The response should be "200 OK".
-
-<br>![image](/exercises/ex4/images/Insomnia-6.png)
-
-10. Navigate back to the monitoring page, and refresh. You should see two more new logs in status **Completed**. In the **Properties** section of the logs, you should see that the message was sent to the **first** receiver.
-
-<br>![](/exercises/ex4/images/04-36.png)
+5.	Trigger a message. Upon success, you will receive **200 OK** status as a response.
+6.	Change the country code to **DE** and resend.
+7.	For monitoring the message in the message monitor of SAP Integration Suite, see steps 3 and following in [option 1](#option-1-using-bruno-api-client).
 
 ## Summary
 
