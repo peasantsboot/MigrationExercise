@@ -73,31 +73,41 @@ After completing these steps you will be able to deploy the Integration flow and
    
 Now you are all set to test your scenario!
 
-## Verify the Interface via Insomnia
+## Verify the Interface
 
 After completing these steps you will be able to test the interface and get the desired result of converting a number into a text.
 
-1. Open Insomnia and click on <b>Use the local Scratch Pad</b>.
+**Note**: You have two options to execute and test your integration scenario:
+- The quickest option is to use the Bruno API client application for which we have provided a collection with pre-configured sample request. As a prerequisite to test your integration scenario using the Bruno API client, you should have gone through [Setup Bruno API client](../ex0setup-bruno-api-client/). If not, do the setup, then come back and proceed with [option 1](#option-1-using-bruno-api-client).
+- If you like to use your own tool, we have described in detail how to setup a sample request incl. body and authentication. This is described in [option 2](#option-2-using-your-own-api-client).
 
-<br>![image](/exercises/ex2/images/Insomnia-1.png)  
+### Option 1: Using Bruno API client
 
-2. Create a <b>New HTTP-Request</b>.
+1. Open the Bruno application on your laptop, expand the **Migration Exercises** collection and select the POST request **Exercise 2 - P2P SOAP to SOAP**. Paste the copied end point from the clipboard into the URL field or simply replace the **XX** in the URL with the id provided to you. Ensure that the **eu03** environment has been selected. Then trigger a message by selecting the **Send Request** button on the upper right.
 
-<br>![image](/exercises/ex2/images/Insomnia-2.png)  
+<br>![image](/exercises/ex2/images/Bruno_SendRequest.png)  
 
-3. <b>Change the Request Method from GET to POST</b>, by clicking the dropdown icon next to GET.  
+2. Upon success, you will receive **200 OK** status and the converted number as a response.
 
-<br>![image](/exercises/ex2/images/Insomnia-3.png)  
+<br>![image](/exercises/ex2/images/Bruno_SendRequest_Successful.png) 
 
-4. <b>Paste the endpoint</b> from you integration flow as URL.  
+3. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to SOAP integration flow.
 
-<br>![image](/exercises/ex2/images/Insomnia-4.png)  
+<br>![image](/exercises/ex2/images/Monitoring_Navigate_To_MPL.png)
 
-5. Add a <b>Body</b> of type XML.
+4. In the message monitor, you should see one new log in status **Completed**.
 
-<br>![image](/exercises/ex2/images/Insomnia-5.png)  
+<br>![image](/exercises/ex2/images/Monitoring_MPL_Completed.png)
 
-6. Provide following payload:
+Scroll down to proceed to the next exercise.
+
+### Option 2: Using your own API client
+
+1. Open your own API client and create a new **POST** request.
+
+2. Paste the copied end point from the clipboard into the URL field.
+
+3. Define the payload of type XML as follows.
 
 ```xml
 <soapenv:Envelope
@@ -112,36 +122,19 @@ After completing these steps you will be able to test the interface and get the 
 </soapenv:Envelope>
 ```
 
-<br>![image](/exercises/ex2/images/Insomnia-6.png)  
+4. To authenticate to the Cloud Integration runtime, select **Basic Authentication** and maintain the credentials as follows.
 
-7. Switch to tab <b>Auth</b> and choose <b>Basic Auth</b>.
-
-<br>![image](/exercises/ex2/images/Insomnia-7.png)  
-
-8. Provide following credentials:<br>
-
-<br>USERNAME =
+<br>User name =
 ```yaml
 sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
 ```
-<br>PASSWORD = 
+<br>Password = 
 ```yaml 
 e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
 ```
 
-<br>![image](/exercises/ex2/images/Insomnia-8.png)  
-
-9. Click <b>Send</b>. The request should return HTTP code 200 and a response with the converted text.
-
-<br>![image](/exercises/ex2/images/Insomnia-9.png)  
-
-10. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to SOAP integration flow.
-
-<br>![image](/exercises/ex2/images/Monitoring_Navigate_To_MPL.png)
-
-11. In the message monitor, you should see one new log in status **Completed**.
-
-<br>![image](/exercises/ex2/images/Monitoring_MPL_Completed.png)
+5.	Trigger a message. Upon success, you will receive **200 OK** status as a response.
+6.	For monitoring the message in the message monitor of SAP Integration Suite, see steps 3 to 4 in [option 1](#option-1-using-bruno-api-client).
 
 ## Summary
 
