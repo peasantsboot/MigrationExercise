@@ -60,11 +60,15 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-17.png)
 
-15.	As you can see from the generated integration flow model, a parallel multicast with three branches have been added, one branch for each receiver. Within each branch, a router condition checks if the message should be sent to the particular receiver. Furthermore, right before the parallel multicast one router condition handles the exception case that no xpath condition is met. Click on **Configure** to configure the sender and receiver adapters.
+15.	As you can see from the generated integration flow model, two integration processes are decoupled via JMS. In the first integration process, the xpath conditions to determine the receivers are carried out in a groovy script. For each receiver that meets the xpath condition, the message is then stored in a JMS queue. The second integration process picks up the messages from this very JMS queue and forwards the message to the right route based on the receiver name. In each route, a mapping is carried out and then the mapped message is sent out to the receiver.
+
+<br>![](/exercises/ex4/images/04-17x.png)
+
+16. Click on **Configure** to configure the sender and receiver adapters.
 
 <br>![](/exercises/ex4/images/04-18.png)
 
-16.	In the upcoming dialog, on tab **Sender**, select the Sender **CBR_S02** and maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
+17.	In the upcoming dialog, on tab **Sender**, select the Sender **CBR_S02** and maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
 
 ```yaml
 /cbr/s02/userXX
@@ -72,11 +76,11 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-27.png)
 
-17. Select the Sender **JMSSender**, and maintain the Queue Name **userXX** with **XX** the user number assigned to you.
+18. Select the Sender of type JMS, here **JMSSender_4** (generated name may vary), and maintain the Queue Name **userXX** with **XX** the user number assigned to you.
 
 <br>![](/exercises/ex4/images/04-27a.png)
 
-18.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers **CBR_R01**, **CBR_R02**, and **CBR_R03**.
+19.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers **CBR_R01**, **CBR_R02**, and **CBR_R03**.
 
 ```yaml
 PIMAS_Demo
@@ -84,19 +88,15 @@ PIMAS_Demo
 
 <br>![](/exercises/ex4/images/04-28.png)
 
-19.	Select the Receiver **JMSReceiver**, and maintain exactly the same Queue Name as before, i.e., **userXX** with **XX** the user number assigned to you. Once done, click **Save** and then **Deploy**.
+20.	Select the Receiver of type JMS, here **JMSReceiver_1**, and maintain exactly the same Queue Name as before, i.e., **userXX** with **XX** the user number assigned to you. Once done, click **Save** and then **Deploy**.
 
 <br>![](/exercises/ex4/images/04-28a.png)
 
-20.	Confirm the upcoming dialog.
+21.	Confirm the upcoming dialog to deploy the integration flow on the **Cloud Integration** runtime.
 
 <br>![](/exercises/ex4/images/04-29.png)
 
-21. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**
-
-<br>![](/exercises/ex4/images/new-04-18.png)
-
-22. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+22. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**. On the monitoring page, select the <b>Manage Integration Content</b> tile.
 
 <br>![](/exercises/ex4/images/04-32.png)
    
