@@ -46,7 +46,7 @@ In the following, the complete list of exercise steps are listed. You can use th
 If you are interested in how the **Migration Assessment** works, start with the first exercise.
 - [Exercise 1 - Migration Assessment](exercises/ex1/)
 
-You do not need to go through all three **Migration Tool** exercises, you can pick just one of the exercises depending on your interest and skills. If you are not familiar with SAP Integration Suite, start with a simple scenario. Otherwise, if you are already experienced with SAP Integration Suite, you may opt for the last exercise since this also covers new features that we have recently shipped. In any case, if you like to run through any of the migration tool exercises, you first need to create an integration package which is described in the Prerequisites chapter.
+You do not need to go through all three **Migration Tool** exercises, you can pick just one of the exercises depending on your interest and skills. If you are not familiar with SAP Integration Suite, start with a simple scenario. Otherwise, if you are already experienced with SAP Integration Suite, you may opt for the last exercise since this also covers new features that we have recently shipped. In any case, if you like to run through any of the migration tool exercises, you first need to create an integration package and setup the API client which is described in the Prerequisites chapter.
 
 - [Prerequisites for the Migration Tool exercises](exercises/ex0/)
 - [Exercise 2 - Migrate and test a simple Point-to-Point scenario](exercises/ex2/)
