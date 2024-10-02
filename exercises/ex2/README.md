@@ -103,6 +103,8 @@ Scroll down to proceed to the next exercise.
 
 ### Option 2: Using your own API client
 
+Skip this option if you have used the Bruno API client to test the integration scenario.
+
 1. Open your own API client and create a new **POST** request.
 
 2. Paste the copied end point from the clipboard into the URL field.
