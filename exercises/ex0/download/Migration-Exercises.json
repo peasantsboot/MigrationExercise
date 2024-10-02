@@ -1,0 +1,121 @@
+{
+  "name": "Migration Exercises",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Exercise 2 - P2P SOAP to SOAP",
+      "seq": 2,
+      "request": {
+        "url": "https://cpisuite-europe-03.it-cpi023-rt.cfapps.eu20-001.hana.ondemand.com/cxf/soap_to_soap_sync_userXX",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "xml",
+          "xml": "<soapenv:Envelope\n    xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n    xmlns:pi=\"http://pi-elevation.bootcamp.com\">\n    <soapenv:Header />\n    <soapenv:Body>\n        <pi:MT_NumberConversion_REQ>\n            <number>1389</number>\n        </pi:MT_NumberConversion_REQ>\n    </soapenv:Body>\n</soapenv:Envelope>",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "basic",
+          "basic": {
+            "username": "{{clientid}}",
+            "password": "{{clientsecret}}"
+          }
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Exercise 3 - P2P SOAP to REST",
+      "seq": 3,
+      "request": {
+        "url": "https://cpisuite-europe-03.it-cpi023-rt.cfapps.eu20-001.hana.ondemand.com/cxf/soap_to_rest_sync_userXX",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "xml",
+          "xml": "<soapenv:Envelope\n  xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\n  xmlns:pi=\"http://pi-elevation.bootcamp.com\">\n  <soapenv:Header />\n  <soapenv:Body>\n      <pi:MT_Employee_REQ>\n          <employee_name>John Doe 124</employee_name>\n          <employee_salary>320800</employee_salary>\n          <employee_age>60</employee_age>\n          <profile_image></profile_image>\n      </pi:MT_Employee_REQ>\n  </soapenv:Body>\n</soapenv:Envelope>",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "basic",
+          "basic": {
+            "username": "{{clientid}}",
+            "password": "{{clientsecret}}"
+          }
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Exercise 4 - Content-Based-Router",
+      "seq": 4,
+      "request": {
+        "url": "https://cpisuite-europe-03.it-cpi023-rt.cfapps.eu20-001.hana.ondemand.com/http/cbr/s02/userXX",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "xml",
+          "xml": "<pi:MT_SalesOrder_0001 xmlns:pi=\"http://pi-elevation.bootcamp.com\">\n  <salesOrder>\n      <orderNumber>00005</orderNumber>\n      <orderDate>10/01/2023</orderDate>\n      <customer>\n          <firstName>Amruta</firstName>\n          <lastName>Kamble</lastName>\n          <street>Hauptstrasse</street>\n          <number>89</number>\n          <country>US</country>\n      </customer>\n      <items>\n          <itemNumber>Test</itemNumber>\n          <material>Test_material</material>\n          <quantity>5</quantity>\n          <price>550</price>\n      </items>\n  </salesOrder>\n</pi:MT_SalesOrder_0001>",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "basic",
+          "basic": {
+            "username": "{{clientid}}",
+            "password": "{{clientsecret}}"
+          }
+        }
+      }
+    }
+  ],
+  "activeEnvironmentUid": "AZBVcAajTxcFgUv89m8QE",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "clientid",
+          "value": "sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "clientsecret",
+          "value": "e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "eu03"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Migration Exercises",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
