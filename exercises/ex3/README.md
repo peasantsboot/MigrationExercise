@@ -81,53 +81,41 @@ MT_Employee_RESP
 
 ## Verify the Interface
 
+After completing these steps you will be able to test the interface.
 
+**Note**: You have two options to execute and test your integration scenario:
+- The quickest option is to use the Bruno API client application for which we have provided a collection with pre-configured sample request. As a prerequisite to test your integration scenario using the Bruno API client, you should have gone through [Setup Bruno API client](../ex0setup-bruno-api-client/). If not, do the setup, then come back and proceed with [option 1](#option-1-using-bruno-api-client).
+- If you like to use your own tool, we have described in detail how to setup a sample request incl. body and authentication. This is described in [option 2](#option-2-using-your-own-api-client).
 
-### Option 1
+### Option 1: Using Bruno API client
 
-6. Click <b>Send</b>.
+1. Open the Bruno application on your laptop, expand the **Migration Exercises** collection and select the POST request **Exercise 3 - P2P SOAP to REST**. Paste the copied end point from the clipboard into the URL field or simply replace the **XX** in the URL with the id provided to you. Ensure that the **eu03** environment has been selected. Then trigger a message by selecting the **Send Request** button on the upper right.
 
 <br>![image](/exercises/ex3/images/bruno-request-send.png)
 
-6. The response should be "200 OK".
+2. Upon success, you will receive **200 OK** status.
 
 <br>![image](/exercises/ex3/images/bruno-request-successful.png)
 
-7. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to REST integration flow.
+3. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed SOAP to REST integration flow.
 
 <br>![image](/exercises/ex3/images/ex3-20.png)
 
-8. In the message monitor, you should see one new log in status **Completed**.
+4. In the message monitor, you should see one new log in status **Completed**.
 
 <br>![image](/exercises/ex3/images/ex3-21.png)
 
+Scroll down to proceed to the next exercise.
 
-### Option 2
+### Option 2: Using your own API client
 
-1.	Open Insomnia and <b>duplicate</b> the Request you created in exercise 2. 
+Skip this option if you have used the Bruno API client to test the integration scenario.
 
-<br>![image](/exercises/ex3/images/Insomnia-1.png)
+1. Open your own API client and create a new **POST** request.
 
-2. Maintain a new name and click <b>Create</b>.
+2. Paste the copied end point from the clipboard into the URL field.
 
-<br>![image](/exercises/ex3/images/Insomnia-2.png)
-
-3. <b>Replace the URL</b> with the endpoint of your new integration flow.
-
-<br>![image](/exercises/ex3/images/Insomnia-3.png)
-
-4. Ensure that the following credentials are maintained (note, should be the case as you copied the request):
-
-<br>USERNAME =
-```yaml
-sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
-```
-<br>PASSWORD = 
-```yaml 
-e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
-```
-
-5. Replace the XML Payload with the following value:
+3. Define the payload of type XML as follows.
 
   ```xml
 <soapenv:Envelope
@@ -145,8 +133,19 @@ e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0
 </soapenv:Envelope>
 ```
 
-<br>![image](/exercises/ex3/images/Insomnia-4.png)
+4. To authenticate to the Cloud Integration runtime, select **Basic Authentication** and maintain the credentials as follows.
 
+<br>User name =
+```yaml
+sb-3009327f-3dc1-4e3e-9853-5bd7c23e221d!b44358|it-rt-cpisuite-europe-03!b18631
+```
+<br>Password = 
+```yaml 
+e507568e-892c-443f-a6ba-4d53f76fecac$wS5Kq2nV25PlNT-U8bh8Yd-HGoBZpO-XW7Za9X3URE0=
+```
+
+5.	Trigger a message. Upon success, you will receive **200 OK** status as a response.
+6.	For monitoring the message in the message monitor of SAP Integration Suite, see steps 3 to 4 in [option 1](#option-1-using-bruno-api-client).
 
 
 ## Summary
