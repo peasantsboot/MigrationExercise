@@ -19,7 +19,7 @@ As a prerequisite, you first need to create an integration package where the aut
 
 <br>![](/exercises/ex2/images/00-02-SavePackage.png)
 
-## Prepare - Setup Bruno API client
+## Setup Bruno API client
 
 To run the integration scenarios, you can use any API test client of your choice. In our exercise scripts,
 we use the open source API client Bruno for which we have prepared a collection.
