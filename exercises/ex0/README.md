@@ -3,6 +3,10 @@
 
 After having finished the assessment of the current SAP Process Orchestration landscape and having estimated the effort needed to migrate with the Migration Assessment capability, the next step is the actual migration. The goal of the Migration Tool is to provide a semi-automated migration where interfaces in Cloud Integration will be automatically created so ideally 60-70% of technical migration efforts are automated. The migration of scenarios is based on a pattern approach, the suitable pattern is applied and the required flow steps are added to create the final integration flows.
 
+Before running through the migration tool exercises, you first need to run trough the folloing preparations steps:
+- [Create an integration package](#create-integration-package)
+- [Setup Bruno API client](#setup-bruno-client)
+
 ## Create an Integration package
 
 As a prerequisite, you first need to create an integration package where the automatically generated integration flows are created. If you have already run through other exercises before, you may have already created an own package. In this case, you can simply reuse the other package and skip the steps below.
@@ -57,7 +61,7 @@ Import the provided collection if not already done.
 
 As part of the collection, environment parameters have been maintained, that is **client id** and **client secret** to be able to authenticate at the Cloud Integration tenant.
 
-1. You should see three requests. In order to be able to select an environment, you need to open any request.
+1. If you expand the **Migration Exercises** collection, you should see three requests. In order to be able to select an environment, you need to select any request.
 
 <br>![](/exercises/ex0/images/bruno-import-collection-requests.png)
 
