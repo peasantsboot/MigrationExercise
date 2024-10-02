@@ -4,8 +4,8 @@
 After having finished the assessment of the current SAP Process Orchestration landscape and having estimated the effort needed to migrate with the Migration Assessment capability, the next step is the actual migration. The goal of the Migration Tool is to provide a semi-automated migration where interfaces in Cloud Integration will be automatically created so ideally 60-70% of technical migration efforts are automated. The migration of scenarios is based on a pattern approach, the suitable pattern is applied and the required flow steps are added to create the final integration flows.
 
 Before running through the migration tool exercises, you first need to run trough the folloing preparations steps:
-- [Create an integration package](#create-integration-package)
-- [Setup Bruno API client](#setup-bruno-client)
+- [Create an integration package](#create-an-integration-package)
+- [Setup Bruno API client](#setup-bruno-api-client)
 
 ## Create an Integration package
 
