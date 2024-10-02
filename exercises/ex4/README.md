@@ -117,11 +117,11 @@ After completing these steps you will be able to test the interface.
 
 1. Open the Bruno application on your laptop, expand the **Migration Exercises** collection and select the POST request **Exercise 4 - Content-Based-Router**. Paste the copied end point from the clipboard into the URL field or simply replace the **XX** in the URL with the id provided to you. Ensure that the **eu03** environment has been selected. Then trigger a message by selecting the **Send Request** button on the upper right.
 
-<br>![image](/exercises/ex3/images/bruno-04-01.png)
+<br>![image](/exercises/ex4/images/bruno-04-01.png)
 
 2. Upon success, you will receive **200 OK** status.
 
-<br>![image](/exercises/ex3/images/bruno-04-02.png)
+<br>![image](/exercises/ex4/images/bruno-04-02.png)
 
 3. Navigate back to the monitoring page, and click the **Monitor Message Processing** link below the **Artifact Details** of your deployed integration flow.
 
