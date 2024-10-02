@@ -139,8 +139,6 @@ After completing these steps you will be able to test the interface.
 
 <br>![](/exercises/ex4/images/04-36.png)
 
-Scroll down to proceed to the next exercise.
-
 ### Option 2: Using your own API client
 
 Skip this option if you have used the Bruno API client to test the integration scenario.
