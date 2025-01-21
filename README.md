@@ -1,6 +1,6 @@
 <!-- [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2023-IN268)](https://api.reuse.software/info/github.com/SAP-samples/teched2023-IN268) -->
 
-# Start with the Right Mind-Set and Learn How to Modernize Your Integration
+# Modernize and Elevate Your Integration to Cloud
 
 <!--
 ## Description
