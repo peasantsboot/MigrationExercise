@@ -18,31 +18,35 @@ Every Integrated Configuration Object (ICO) that can be migrated has an associat
 
 <br>![](/exercises/ex2/images/PO_Sys.png)
    
-4. Currently, only Integrated Configuration Objects (ICO) are supported. You can use the filter to filter out the list of ICOs and choose the appropriate scenario. Click on <b>Show Filters</b>. 
+4. On SAP Process Orchestration, only Integrated Configuration Objects (ICO) are supported. So keep the Object Type as **Integrated Configuration**. You can use the filter to filter out the list of ICOs and choose the appropriate scenario. Click on the <b>Selection</b> icon. 
 
 <br>![image](/exercises/ex2/images/ShowFilters.png)
 
-5. In the filter, fill in **bootcamp** as <b>Namespace</b>. The filter reduces the number of entries in the **Name** drop down list. Choose the interface **SI_NumberConversion_Out** with sender **PIMAS_Sender** from the drop-down list. Click <b>Next Step</b>.
+5. In the filter of the upcoming dialog, fill in **bootcamp** as <b>Namespace</b>, then select button **Go** to restrict the list of Items. Choose the interface **SI_NumberConversion_Out** with sender **PIMAS_Sender** from the Items list.
 
 <br>![image](/exercises/ex2/images/ChooseScenario.png)
 
-6. The best-fit pattern is identified by the migration framework and will be automatically filled in for you. In this case, it will be **Point-to-Point Synchronous**. Click <b>Next Step</b>.
+6. Click <b>Next Step</b>.
+
+<br>![image](/exercises/ex2/images/ChooseScenarioNext.png)
+
+7. The best-fit pattern is identified by the migration framework and will be automatically filled in for you. In this case, it will be **Point-to-Point Synchronous**. Click <b>Next Step</b>.
 
 <br>![](/exercises/ex2/images/P2PSyncPattern.png)
 
-7. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, **unselect** the **Enable Reusable Message Mapping Artifacts** flag. Then, click <b>Next Step</b>
+8. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, **unselect** the **Enable Reusable Message Mapping Artifacts** flag. Then, click <b>Next Step</b>
 
 <br>![](/exercises/ex2/images/NoReusableArtifacts.png)
 
-8. Maintain any **Name** for your integration flow, e.g. following the pattern: **soap_to_soap_sync_userXX** where <b>XX</b> is your user id from 00 to 99. Note, that the ID of your integration flow needs to be unique across all integration flows on the tenant. Click on <b>Review</b>.
+9. Maintain any **Name** for your integration flow, e.g. following the pattern: **soap_to_soap_sync_userXX** where <b>XX</b> is your user id from 00 to 99. Note, that the ID of your integration flow needs to be unique across all integration flows on the tenant. Click on <b>Review</b>.
 
 <br>![](/exercises/ex2/images/Int_Name_Review.png)
     
-9. Verify the information and then click on <b>Migrate</b>.
+10. Verify the information and then click on <b>Migrate</b>.
 
 <br>![](/exercises/ex2/images/Final_Migrate.png)
     
-10. A new integration flow has been generated within your package. Click on the artifact to take a closer look at each individual step. The required information is automatically populated such as the connection information. Click on <b>View Artifact</b>.
+11. A new integration flow has been generated within your package. Click on the artifact to take a closer look at each individual step. The required information is automatically populated such as the connection information. Click on <b>View Artifact</b>.
 
 <br> ![image](/exercises/ex2/images/ViewArtifact.png)
 
