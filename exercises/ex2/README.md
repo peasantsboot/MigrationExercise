@@ -18,7 +18,7 @@ Every Integrated Configuration Object (ICO) that can be migrated has an associat
 
 <br>![](/exercises/ex2/images/PO_Sys.png)
    
-4. On SAP Process Orchestration, only Integrated Configuration Objects (ICO) are supported. So keep the Object Type as **Integrated Configuration**. You can use the filter to filter out the list of ICOs and choose the appropriate scenario. Click on the <b>Selection</b> icon. 
+4. In SAP Process Orchestration, only Integrated Configuration Objects (ICO) are supported. So keep the Object Type as **Integrated Configuration**. You can use the filter to filter out the list of ICOs and choose the appropriate scenario. Click on the <b>Selection</b> icon. 
 
 <br>![image](/exercises/ex2/images/ShowFilters.png)
 
@@ -26,7 +26,7 @@ Every Integrated Configuration Object (ICO) that can be migrated has an associat
 
 <br>![image](/exercises/ex2/images/ChooseScenario.png)
 
-6. Click <b>Next Step</b>.
+6. Once you have selected the scenario, click <b>Next Step</b>.
 
 <br>![image](/exercises/ex2/images/ChooseScenarioNext.png)
 
