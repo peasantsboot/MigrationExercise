@@ -16,37 +16,45 @@ In this exercise, we will create and migrate a SOAP to REST scenario.	For this p
 
 <br>![](/exercises/ex3/images/3.0_Migrate_SelectPO_System.png)
 
-4.	Click on <b>Show Filters</b> and fill in **bootcamp** for the **Namespace**. Choose the interface **SI_Employee_Out** with sender **PIMAS_Sender** from the drop-down list. Click <b>Next Step</b>.
+4. In SAP Process Orchestration, only Integrated Configuration Objects (ICO) are supported. So keep the Object Type as **Integrated Configuration**. You can use the filter to filter out the list of ICOs and choose the appropriate scenario. Click on the <b>Selection</b> icon. 
 
-<br>![](/exercises/ex3/images/3.1_Migrate_SelectPO_Artifacts.png)
+<br>![image](/exercises/ex3/images/ShowFilters.png)
 
-5.	The best fit pattern **Point-to-Point Synchronous** is proposed. Click <b>Next Step</b>.
+5. In the filter of the upcoming dialog, fill in **bootcamp** as <b>Namespace</b>, then select button **Go** to restrict the list of Items. Choose the interface **SI_Employee_Out** with sender **PIMAS_Sender** from the Items list.
+
+<br>![image](/exercises/ex3/images/ChooseScenario.png)
+
+6. Once you have selected the scenario, click <b>Next Step</b>.
+
+<br>![image](/exercises/ex3/images/ChooseScenarioNext.png)
+
+7.	The best fit pattern **Point-to-Point Synchronous** is proposed. Click <b>Next Step</b>.
 
 <br>![](/exercises/ex3/images/P2PSyncPattern.png)
 
-6. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, unselect the **Enable Reusable Message Mapping Artifacts** flag. Then, click **Next Step**.
+8. In the next step, you can choose whether you create reusable message mapping artifacts or not. In this exercise, let's opt for using local resources. So, unselect the **Enable Reusable Message Mapping Artifacts** flag. Then, click **Next Step**.
 
 <br>![](/exercises/ex3/images/3.4_Migrate_SelectPO_NoReuse.png)
 
-7.	Maintain a **Name** for your integration flow, e.g., following the pattern **soap_to_rest_sync_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
+9.	Maintain a **Name** for your integration flow, e.g., following the pattern **soap_to_rest_sync_userXX** where <b>XX</b> is your user number from 00 to 99. Then, click on <b>Review</b>.
 
 <br>![image](/exercises/ex3/images/ex3-6.png)
 
-8.	Verify the information and click on <b>Migrate</b>.
+10.	Verify the information and click on <b>Migrate</b>.
 
 <br>![image](/exercises/ex3/images/ex3-7.png)
 
-9.	Again, the integration flow will be generated within your integration package. As you can see from the summary page, the REST receiver adapter on SAP Process Orchestration has been mapped to the HTTP adapter in Cloud Integration. Click on  **View Artifact** to take a closer look. 
+11.	Again, the integration flow will be generated within your integration package. As you can see from the summary page, the REST receiver adapter on SAP Process Orchestration has been mapped to the HTTP adapter in Cloud Integration. Click on  **View Artifact** to take a closer look. 
 
 <br>![](/exercises/ex3/images/4.0_Migration_Success.png)
 
 **Note**: for this particular scenario, not all attributes of the ICO on SAP Process Orchestration could be mapped to the parameters in the integration flow on Cloud Integration, so a couple of manual adjustments need to be carried out. The attribute mapping will be improved with future increments of the migration tool so that manual interaction is reduced to a bare minimum.
 
-10. Switch to <b>Edit</b> mode at the top right corner.
+12. Switch to <b>Edit</b> mode at the top right corner.
 
 <br>![image](/exercises/ex3/images/ex3-13.png)
 
-11. In the integration flow properties, switch to tab **Runtime Configuration**, and add the following **Namespace Mapping**:
+13. In the integration flow properties, switch to tab **Runtime Configuration**, and add the following **Namespace Mapping**. Once done, click <b>Save</b> and then <b>Deploy</b> to deploy the integration flow.
 
 ```yaml
 xmlns:ns0=http://pi-elevation.bootcamp.com
@@ -54,17 +62,6 @@ xmlns:ns0=http://pi-elevation.bootcamp.com
 
 <br>![](/exercises/ex3/images/5.0_View_iFlow_Changes_to_Make.png)
 
-12.	Next, click on the  **JSON to XML Converter** and switch to the **Processing** tab. Select the previously created **Namespace Mapping** by clicking **Select**. Furthermore, enter the **Name** of the root element as follows:
-
-```yaml
-MT_Employee_RESP
-```
-
-<br>![](/exercises/ex3/images/5.3_Edit_iFlow_JSON_to_XML.png)
-
-13.	Click <b>Save</b> and then <b>Deploy</b> to deploy the integration flow.
-
-<br>  ![image](/exercises/ex3/images/ex3-17.png)
 
 14. In the upcoming dialog, select the **Cloud Integration** runtime and select **Yes**. Then, confirm the next dialog.
 
