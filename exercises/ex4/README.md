@@ -68,11 +68,18 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-17x.png)
 
-17. Click on **Configure** to configure the sender and receiver adapters.
+17. Open the **Runtime Configuration** tab and check if the namespaces are properly set. You should see two namespaces. If not, add the following namespaces to the **Namespace Mapping** list separated by semicolon. Then **Save** your changes.
+
+```yaml
+xmlns:sys=http://sap.com/xi/XI/System;xmlns:p1=http://pi-elevation.bootcamp.com
+```
+<br>![](/exercises/ex4/images/04-17ns.png)
+
+18. Click on **Configure** to configure the sender and receiver adapters.
 
 <br>![](/exercises/ex4/images/04-18.png)
 
-18.	In the upcoming dialog, on tab **Sender**, select the Sender **CBR_S02** and maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
+19.	In the upcoming dialog, on tab **Sender**, select the Sender **CBR_S02** and maintain the endpoint of your generated integration flow. The endpoint needs to be unique within the tenant, so append **/userXX** to the Address with **XX** the user number assigned to you.
 
 ```yaml
 /cbr/s02/userXX
@@ -80,11 +87,11 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![](/exercises/ex4/images/04-27.png)
 
-19. Select the Sender of type JMS, here **JMSSender_4** (generated name may vary), and maintain the Queue Name **userXX** with **XX** the user number assigned to you.
+20. Select the Sender of type JMS, here **JMSSender_4** (generated name may vary), and maintain the Queue Name **userXX** with **XX** the user number assigned to you.
 
 <br>![](/exercises/ex4/images/04-27a.png)
 
-20.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers **CBR_R01**, **CBR_R02**, and **CBR_R03**.
+21.	Switch to tab **Receiver**, and maintain the credential alias **PIMAS_Demo** for each of the three receivers **CBR_R01**, **CBR_R02**, and **CBR_R03**.
 
 ```yaml
 PIMAS_Demo
@@ -92,19 +99,19 @@ PIMAS_Demo
 
 <br>![](/exercises/ex4/images/04-28.png)
 
-21.	Select the Receiver of type JMS, here **JMSReceiver_1**, and maintain exactly the same Queue Name as before, i.e., **userXX** with **XX** the user number assigned to you. Once done, click **Save** and then **Deploy**.
+22.	Select the Receiver of type JMS, here **JMSReceiver_1**, and maintain exactly the same Queue Name as before, i.e., **userXX** with **XX** the user number assigned to you. Once done, click **Save** and then **Deploy**.
 
 <br>![](/exercises/ex4/images/04-28a.png)
 
-22.	Confirm the upcoming dialog to deploy the integration flow on the **Cloud Integration** runtime.
+23.	Confirm the upcoming dialog to deploy the integration flow on the **Cloud Integration** runtime.
 
 <br>![](/exercises/ex4/images/04-29.png)
 
-23. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**. On the monitoring page, select the <b>Manage Integration Content</b> tile.
+24. You can check the deployment status via the monitor dashboard. Navigate to **Monitor > Integrations and APIs**. On the monitoring page, select the <b>Manage Integration Content</b> tile.
 
 <br>![](/exercises/ex4/images/04-32.png)
    
-24. Your integration flow should be in status <b>Started</b>. You can also see that the resuable function libraries artifact and message mapping has been already deployed. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> of your integraiton flow to the clipboard as we will use it in the next steps.
+25. Your integration flow should be in status <b>Started</b>. You can also see that the resuable function libraries artifact and message mapping has been already deployed. From here, you get the endpoint that you need to call to test the scenario. <b>Copy the endpoint</b> of your integraiton flow to the clipboard as we will use it in the next steps.
 
 <br>![](/exercises/ex4/images/new-04-16.png)
 
