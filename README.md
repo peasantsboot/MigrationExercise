@@ -50,7 +50,7 @@ You do not need to go through all three **Migration Tool** exercises, you can pi
 
 - [Prerequisites for the Migration Tool exercises](exercises/ex0/)
 - [Exercise 2 - Migrate and test a simple Point-to-Point scenario](exercises/ex2/)
-<!-- - [Exercise 3 - Migrate and test a Point-to-Point scenario with JSON conversion](exercises/ex3/) -->
+- [Exercise 3 - Migrate and test a Point-to-Point scenario with JSON conversion](exercises/ex3/).
 - [Exercise 4 - Migrate and test a Content-Based-Routing scenario](exercises/ex4/)
   
 <!-- **OR** Link to the Tutorial Navigator for example... 
