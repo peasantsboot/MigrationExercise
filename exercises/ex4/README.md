@@ -28,7 +28,8 @@ In this exercise, we will create and migrate a Content-Based-Router scenario, i.
 
 <br>![image](/exercises/ex4/images/ChooseScenarioNext.png)
 
-7.	The best fit pattern is identified. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. Right now however, for content-based routing as well as recipient list scenarios, the **Recipient List Asynchronous** pattern is proposed. This may change in future to simplify the integration flow model for content-based routing scenarios. Click <b>Next Step</b>.
+7.	The best fit pattern is identified. Whether your ICO is of pattern Content Based Routing or Recipient List depends on the xpath conditions to determine the receivers. If the xpaths conditions are exclusive, i.e., only one condition applies and as such the message is sent to only one receiver, then the ICO is of pattern Content Based Routing. Otherwise, if many conditions may apply for a message, and hence the message may be sent to multiple receivers, then the ICO is of pattern Recipient List. Right now however, for content-based routing as well as recipient list scenarios, the **Recipient List Asynchronous** pattern is proposed. This may change in future to simplify the integration flow model for content-based routing scenarios. For this exercise, choose the **Standard** Migration approach. 
+ Click <b>Next Step</b>.
 
 <br>![](/exercises/ex4/images/04-08.png)
 
