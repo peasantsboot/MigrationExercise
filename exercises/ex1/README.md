@@ -96,15 +96,15 @@ Access and download analysis of your scenario evaluation runs with details speci
 
 <br>![](/exercises/ex1/images/Dashboard.png)
    
-5. Switch back to the list of <b>Scenario Evaluation</b> requests. From the Additional Options menu, you can select <b>Trigger Analysis</b> to schedule a new evaluation run based on the most recent data extraction. Let's skip this for now as data did not change. Furthermore, you have the option to download details about the latest evaluation run either in an Excel format or as a PDF file.
+5. Switch back to the list of <b>Scenario Evaluation</b> requests. From the Additional Options menu, you can select <b>Trigger Analysis</b> to schedule a new evaluation run based on the most recent data extraction. Let's skip this for now as data did not change. Furthermore, you have the option to download details about the latest evaluation run either in an Excel format via **Export** or as a PDF file via **Generate Report**.
 
 <br>![](/exercises/ex1/images/Eval_Actions.png)
      
-6. The option as .xlsx file lists all integration scenarios that were part of the request with migration effort and status as well as the rules applied to them. In addtion, you find a tab providing more details about the modernization recommendations.
+6. The option **Export** lists all integration scenarios that were part of the request with migration effort and status as well as the rules applied to them  as .xlsx file. In addtion, you find a tab providing more details about the modernization recommendations.
 
 <br>![](/exercises/ex1/images/Excel.png)
 
-7. The option as .pdf file features the previously mentioned details about the integration scenarios while also providing a written summary of adapters and the assessment in general, with charts and tables as visual aids. It also maps the t-shirt effort estimation to effort estimation in person days based on project experience. This file is suited as a summarizing report, that can be used for example for management.
+7. The option **Generate Report** creates a .pdf file that features the previously mentioned details about the integration scenarios while also providing a written summary of adapters and the assessment in general, with charts and tables as visual aids. It also maps the t-shirt effort estimation to effort estimation in person days based on project experience. This file is suited as a summarizing report, that can be used for example for management.
 
 <br>![](/exercises/ex1/images/pdf.png)
 
